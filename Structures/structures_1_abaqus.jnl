@@ -1,0 +1,1760 @@
+# -*- coding: mbcs -*-
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].ConstrainedSketch(name='__profile__', sheetSize=575.0)
+mdb.models['Model-1'].sketches['__profile__'].rectangle(point1=(-9.43, -1.47), 
+    point2=(9.43, 1.47))
+mdb.models['Model-1'].Part(dimensionality=THREE_D, name='Beam', type=
+    DEFORMABLE_BODY)
+mdb.models['Model-1'].parts['Beam'].BaseSolidExtrude(depth=57.5, sketch=
+    mdb.models['Model-1'].sketches['__profile__'])
+del mdb.models['Model-1'].sketches['__profile__']
+mdb.models['Model-1'].parts['Beam'].features['Solid extrude-1'].setValues(
+    depth=575.0)
+mdb.models['Model-1'].parts['Beam'].regenerate()
+mdb.models['Model-1'].parts['Beam'].Set(edges=
+    mdb.models['Model-1'].parts['Beam'].edges.getSequenceFromMask(('[#400 ]', 
+    ), ), name='SupportC')
+mdb.models['Model-1'].parts['Beam'].PartitionCellByPlanePointNormal(cells=
+    mdb.models['Model-1'].parts['Beam'].cells.getSequenceFromMask(('[#1 ]', ), 
+    ), normal=mdb.models['Model-1'].parts['Beam'].edges[5], point=
+    mdb.models['Model-1'].parts['Beam'].InterestingPoint(
+    mdb.models['Model-1'].parts['Beam'].edges[5], MIDDLE))
+del mdb.models['Model-1'].parts['Beam'].features['Partition cell-1']
+mdb.models['Model-1'].parts['Beam'].PartitionCellByPlanePointNormal(cells=
+    mdb.models['Model-1'].parts['Beam'].cells.getSequenceFromMask(('[#1 ]', ), 
+    ), normal=mdb.models['Model-1'].parts['Beam'].edges[5], point=
+    mdb.models['Model-1'].parts['Beam'].InterestingPoint(
+    mdb.models['Model-1'].parts['Beam'].edges[5], MIDDLE))
+del mdb.models['Model-1'].parts['Beam']
+mdb.models['Model-1'].ConstrainedSketch(name='__profile__', sheetSize=575.0)
+mdb.models['Model-1'].sketches['__profile__'].rectangle(point1=(-9.43, -2.94), 
+    point2=(9.43, 0.0))
+mdb.models['Model-1'].Part(dimensionality=THREE_D, name='Beam', type=
+    DEFORMABLE_BODY)
+mdb.models['Model-1'].parts['Beam'].BaseSolidExtrude(depth=575.0, sketch=
+    mdb.models['Model-1'].sketches['__profile__'])
+del mdb.models['Model-1'].sketches['__profile__']
+mdb.models['Model-1'].parts['Beam'].PartitionCellByPlanePointNormal(cells=
+    mdb.models['Model-1'].parts['Beam'].cells.getSequenceFromMask(('[#1 ]', ), 
+    ), normal=mdb.models['Model-1'].parts['Beam'].edges[5], point=
+    mdb.models['Model-1'].parts['Beam'].InterestingPoint(
+    mdb.models['Model-1'].parts['Beam'].edges[5], MIDDLE))
+mdb.models['Model-1'].parts['Beam'].Set(edges=
+    mdb.models['Model-1'].parts['Beam'].edges.getSequenceFromMask(('[#80000 ]', 
+    ), ), name='SupportC')
+mdb.models['Model-1'].parts['Beam'].Set(edges=
+    mdb.models['Model-1'].parts['Beam'].edges.getSequenceFromMask(('[#800 ]', 
+    ), ), name='SupportB')
+mdb.models['Model-1'].parts['Beam'].ReferencePoint(point=(0.0, 0.0, 135.0))
+mdb.models['Model-1'].parts['Beam'].sets.changeKey(fromName='SupportC', toName=
+    'SAupportC')
+mdb.models['Model-1'].parts['Beam'].sets.changeKey(fromName='SupportB', toName=
+    'SupportC')
+mdb.models['Model-1'].parts['Beam'].sets.changeKey(fromName='SAupportC', 
+    toName='SupportB')
+del mdb.models['Model-1'].parts['Beam'].features['Partition cell-1']
+del mdb.models['Model-1'].parts['Beam'].features['RP']
+mdb.models['Model-1'].parts['Beam'].ReferencePoint(point=(9.43, 0.0, 135.0))
+mdb.models['Model-1'].parts['Beam'].PartitionCellByPlanePointNormal(cells=
+    mdb.models['Model-1'].parts['Beam'].cells.getSequenceFromMask(('[#1 ]', ), 
+    ), normal=mdb.models['Model-1'].parts['Beam'].edges[1], point=
+    mdb.models['Model-1'].parts['Beam'].InterestingPoint(
+    mdb.models['Model-1'].parts['Beam'].edges[1], MIDDLE))
+mdb.models['Model-1'].parts['Beam'].PartitionEdgeByParam(edges=
+    mdb.models['Model-1'].parts['Beam'].edges.getSequenceFromMask(('[#40 ]', ), 
+    ), parameter=0.469503067680027)
+del mdb.models['Model-1'].parts['Beam'].features['Partition edge-1']
+mdb.models['Model-1'].parts['Beam'].PartitionEdgeByParam(edges=
+    mdb.models['Model-1'].parts['Beam'].edges.getSequenceFromMask(('[#4000 ]', 
+    ), ), parameter=0.5)
+del mdb.models['Model-1'].parts['Beam'].features['Partition edge-1']
+del mdb.models['Model-1'].parts['Beam'].features['RP']
+mdb.models['Model-1'].parts['Beam'].DatumPlaneByPrincipalPlane(offset=135.0, 
+    principalPlane=XYPLANE)
+mdb.models['Model-1'].parts['Beam'].DatumPlaneByPrincipalPlane(offset=66.0, 
+    principalPlane=XYPLANE)
+del mdb.models['Model-1'].parts['Beam'].features['Partition cell-1']
+mdb.models['Model-1'].parts['Beam'].PartitionCellByDatumPlane(cells=
+    mdb.models['Model-1'].parts['Beam'].cells.getSequenceFromMask(('[#1 ]', ), 
+    ), datumPlane=mdb.models['Model-1'].parts['Beam'].datums[11])
+mdb.models['Model-1'].parts['Beam'].PartitionCellByDatumPlane(cells=
+    mdb.models['Model-1'].parts['Beam'].cells.getSequenceFromMask(('[#1 ]', ), 
+    ), datumPlane=mdb.models['Model-1'].parts['Beam'].datums[10])
+mdb.models['Model-1'].parts['Beam'].DatumPlaneByPrincipalPlane(offset=355.0, 
+    principalPlane=XYPLANE)
+mdb.models['Model-1'].parts['Beam'].DatumPlaneByPrincipalPlane(offset=465.0, 
+    principalPlane=XYPLANE)
+mdb.models['Model-1'].parts['Beam'].PartitionCellByDatumPlane(cells=
+    mdb.models['Model-1'].parts['Beam'].cells.getSequenceFromMask(('[#2 ]', ), 
+    ), datumPlane=mdb.models['Model-1'].parts['Beam'].datums[14])
+mdb.models['Model-1'].parts['Beam'].PartitionCellByDatumPlane(cells=
+    mdb.models['Model-1'].parts['Beam'].cells.getSequenceFromMask(('[#1 ]', ), 
+    ), datumPlane=mdb.models['Model-1'].parts['Beam'].datums[15])
+mdb.models['Model-1'].parts['Beam'].features.changeKey(fromName='Datum plane-1'
+    , toName='DatumPlane_SG1')
+mdb.models['Model-1'].parts['Beam'].features.changeKey(fromName=
+    'DatumPlane_SG1', toName='DatumPlane_SupportA')
+mdb.models['Model-1'].parts['Beam'].features.changeKey(fromName='Datum plane-2'
+    , toName='DatumPlane_SG1')
+mdb.models['Model-1'].parts['Beam'].features.changeKey(fromName=
+    'Partition cell-1', toName='Partition_SG1')
+mdb.models['Model-1'].parts['Beam'].features.changeKey(fromName=
+    'Partition cell-2', toName='Partition_SupportA')
+del mdb.models['Model-1'].parts['Beam'].features['Partition_SG1']
+del mdb.models['Model-1'].parts['Beam'].features['Partition cell-3']
+# Save by Martin Leung on 2023_04_24-20.18.12; build 2022 2021_09_16-01.57.30 176069
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].parts['Beam'].Set(edges=
+    mdb.models['Model-1'].parts['Beam'].edges.getSequenceFromMask(('[#8000 ]', 
+    ), ), name='SupportA')
+mdb.models['Model-1'].parts['Beam'].Set(edges=
+    mdb.models['Model-1'].parts['Beam'].edges.getSequenceFromMask(('[#2 ]', ), 
+    ), name='Hanger2')
+mdb.models['Model-1'].parts['Beam'].features.changeKey(fromName=
+    'Partition cell-4', toName='Partition_Hanger2')
+mdb.models['Model-1'].parts['Beam'].features.changeKey(fromName='Datum plane-4'
+    , toName='Plane_Hanger2')
+mdb.models['Model-1'].parts['Beam'].features.changeKey(fromName='Datum plane-3'
+    , toName='Plane_SG2')
+mdb.models['Model-1'].parts['Beam'].features.changeKey(fromName=
+    'DatumPlane_SG1', toName='Plane_SG1')
+mdb.models['Model-1'].parts['Beam'].features.changeKey(fromName=
+    'DatumPlane_SupportA', toName='Plane_SupportA')
+mdb.models['Model-1'].parts['Beam'].Set(cells=
+    mdb.models['Model-1'].parts['Beam'].cells.getSequenceFromMask(('[#7 ]', ), 
+    ), name='All')
+mdb.models['Model-1'].Material(name='Steel')
+mdb.models['Model-1'].materials['Steel'].Elastic(table=((200000.0, 0.3), ))
+mdb.models['Model-1'].HomogeneousSolidSection(material='Steel', name='Steel', 
+    thickness=None)
+mdb.models['Model-1'].parts['Beam'].SectionAssignment(offset=0.0, offsetField=
+    '', offsetType=MIDDLE_SURFACE, region=
+    mdb.models['Model-1'].parts['Beam'].sets['All'], sectionName='Steel', 
+    thicknessAssignment=FROM_SECTION)
+mdb.models['Model-1'].rootAssembly.DatumCsysByDefault(CARTESIAN)
+mdb.models['Model-1'].rootAssembly.Instance(dependent=OFF, name='Beam-1', part=
+    mdb.models['Model-1'].parts['Beam'])
+mdb.models['Model-1'].StaticStep(description='Loading', name='Load', previous=
+    'Initial')
+mdb.models['Model-1'].parts['Beam'].Set(name='SupportA', vertices=
+    mdb.models['Model-1'].parts['Beam'].vertices.getSequenceFromMask(('[#4 ]', 
+    ), ))
+mdb.models['Model-1'].parts['Beam'].Set(edges=
+    mdb.models['Model-1'].parts['Beam'].edges.getSequenceFromMask(('[#e100 ]', 
+    ), ), name='SupportA')
+mdb.models['Model-1'].parts['Beam'].Set(faces=
+    mdb.models['Model-1'].parts['Beam'].faces.getSequenceFromMask(('[#4000 ]', 
+    ), ), name='SupportB')
+mdb.models['Model-1'].rootAssembly.regenerate()
+mdb.models['Model-1'].parts['Beam'].Set(faces=
+    mdb.models['Model-1'].parts['Beam'].faces.getSequenceFromMask(('[#400 ]', 
+    ), ), name='SupportA')
+mdb.models['Model-1'].parts['Beam'].Set(edges=
+    mdb.models['Model-1'].parts['Beam'].edges.getSequenceFromMask(('[#e100 ]', 
+    ), ), name='SupportA')
+mdb.models['Model-1'].parts['Beam'].Set(faces=
+    mdb.models['Model-1'].parts['Beam'].faces.getSequenceFromMask(('[#8000 ]', 
+    ), ), name='SupportC')
+mdb.models['Model-1'].parts['Beam'].Set(edges=
+    mdb.models['Model-1'].parts['Beam'].edges.getSequenceFromMask(('[#f ]', ), 
+    ), name='Hanger2')
+mdb.models['Model-1'].rootAssembly.regenerate()
+mdb.models['Model-1'].DisplacementBC(amplitude=UNSET, createStepName='Initial', 
+    distributionType=UNIFORM, fieldName='', localCsys=None, name='SupportA', 
+    region=
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'].sets['SupportA'], 
+    u1=UNSET, u2=SET, u3=SET, ur1=UNSET, ur2=UNSET, ur3=UNSET)
+mdb.models['Model-1'].DisplacementBC(amplitude=UNSET, createStepName='Initial', 
+    distributionType=UNIFORM, fieldName='', localCsys=None, name='SupportB', 
+    region=
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'].sets['SupportB'], 
+    u1=UNSET, u2=SET, u3=UNSET, ur1=UNSET, ur2=UNSET, ur3=UNSET)
+mdb.models['Model-1'].DisplacementBC(amplitude=UNSET, createStepName='Initial', 
+    distributionType=UNIFORM, fieldName='', localCsys=None, name='SupportC', 
+    region=
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'].sets['SupportC'], 
+    u1=UNSET, u2=SET, u3=UNSET, ur1=UNSET, ur2=UNSET, ur3=UNSET)
+mdb.models['Model-1'].rootAssembly.ReferencePoint(point=
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'].InterestingPoint(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'].edges[3], MIDDLE))
+mdb.models['Model-1'].rootAssembly.ReferencePoint(point=
+    mdb.models['Model-1'].rootAssembly.referencePoints[4])
+mdb.models['Model-1'].rootAssembly.ReferencePoint(point=
+    mdb.models['Model-1'].rootAssembly.referencePoints[5])
+mdb.models['Model-1'].rootAssembly.deleteFeatures(('RP-1', 'RP-2', 'RP-3'))
+mdb.models['Model-1'].parts['Beam'].ReferencePoint(point=
+    mdb.models['Model-1'].parts['Beam'].InterestingPoint(
+    mdb.models['Model-1'].parts['Beam'].edges[8], MIDDLE))
+mdb.models['Model-1'].rootAssembly.regenerate()
+mdb.models['Model-1'].parts['Beam'].Set(name='LoadPoint', referencePoints=(
+    mdb.models['Model-1'].parts['Beam'].referencePoints[28], ))
+mdb.models['Model-1'].rootAssembly.regenerate()
+del mdb.models['Model-1'].parts['Beam'].features['RP']
+mdb.models['Model-1'].parts['Beam'].ReferencePoint(point=
+    mdb.models['Model-1'].parts['Beam'].InterestingPoint(
+    mdb.models['Model-1'].parts['Beam'].edges[8], MIDDLE))
+mdb.models['Model-1'].parts['Beam'].Set(name='LoadPoint', referencePoints=(
+    mdb.models['Model-1'].parts['Beam'].referencePoints[30], ))
+mdb.models['Model-1'].rootAssembly.regenerate()
+mdb.models['Model-1'].MultipointConstraint(controlPoint=
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'].sets['LoadPoint'], 
+    csys=None, mpcType=BEAM_MPC, name='MPC', surface=
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'].sets['Hanger2'], 
+    userMode=DOF_MODE_MPC, userType=0)
+mdb.models['Model-1'].ConcentratedForce(cf2=-40.0, createStepName='Load', 
+    distributionType=UNIFORM, field='', localCsys=None, name='Load', region=
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'].sets['LoadPoint'])
+mdb.models['Model-1'].rootAssembly.seedPartInstance(deviationFactor=0.1, 
+    minSizeFactor=0.1, regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'], ), size=20.0)
+mdb.models['Model-1'].rootAssembly.seedPartInstance(deviationFactor=0.1, 
+    minSizeFactor=0.1, regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'], ), size=2.94)
+mdb.models['Model-1'].rootAssembly.setElementType(elemTypes=(ElemType(
+    elemCode=C3D8R, elemLibrary=STANDARD, secondOrderAccuracy=OFF, 
+    kinematicSplit=AVERAGE_STRAIN, hourglassControl=DEFAULT, 
+    distortionControl=DEFAULT), ElemType(elemCode=C3D6, elemLibrary=STANDARD), 
+    ElemType(elemCode=C3D4, elemLibrary=STANDARD)), regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'].cells.getSequenceFromMask(
+    ('[#7 ]', ), ), ))
+mdb.models['Model-1'].rootAssembly.generateMesh(regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'], ))
+mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='Model-1', modelPrint=OFF, 
+    multiprocessingMode=DEFAULT, name='Job-1', nodalOutputPrecision=FULL, 
+    numCpus=2, numDomains=2, numGPUs=0, numThreadsPerMpiProcess=1, queue=None, 
+    resultsFormat=ODB, scratch='', type=ANALYSIS, userSubroutine='', waitHours=
+    0, waitMinutes=0)
+mdb.jobs['Job-1'].submit(consistencyChecking=OFF)
+mdb.jobs['Job-1']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'DESKTOP-DIUKBM0', 'handle': 0, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\SIMULIA\\EstProducts\\2022\\win_b64\\resources\\install\\cmdDirFeature\\Job-1.odb', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'DESKTOP-DIUKBM0', 'handle': 10968, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(STEP, {'stepName': 'Loading', 
+    'phase': STANDARD_PHASE, 'stepId': 1, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 0, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': 'Job-1', 'memory': 36.0})
+mdb.jobs['Job-1']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 65472.0, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(MINIMUM_MEMORY, {'minimum_memory': 19.0, 
+    'phase': STANDARD_PHASE, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'Solver problem. Numerical singularity when processing node BEAM-1.77 D.O.F. 1 ratio = 22.9837E+12 .', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 1, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(STATUS, {'totalTime': 1.0, 'attempts': 1, 
+    'timeIncrement': 1.0, 'increment': 1, 'stepTime': 1.0, 'step': 1, 
+    'jobName': 'Job-1', 'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 
+    'equilibrium': 1})
+mdb.jobs['Job-1']._Message(END_STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(JOB_COMPLETED, {'time': 'Mon Apr 24 21:43:22 2023', 
+    'jobName': 'Job-1'})
+del mdb.jobs['Job-1']
+mdb.models['Model-1'].parts['Beam'].Set(edges=
+    mdb.models['Model-1'].parts['Beam'].edges.getSequenceFromMask(('[#8000 ]', 
+    ), ), name='SupportA')
+mdb.models['Model-1'].parts['Beam'].Set(edges=
+    mdb.models['Model-1'].parts['Beam'].edges.getSequenceFromMask(('[#800 ]', 
+    ), ), name='SupportB')
+mdb.models['Model-1'].parts['Beam'].Set(edges=
+    mdb.models['Model-1'].parts['Beam'].edges.getSequenceFromMask(('[#20000 ]', 
+    ), ), name='SupportC')
+mdb.models['Model-1'].rootAssembly.regenerate()
+del mdb.models['Model-1'].parts['Beam'].features['RP']
+mdb.models['Model-1'].parts['Beam'].ReferencePoint(point=
+    mdb.models['Model-1'].parts['Beam'].InterestingPoint(
+    mdb.models['Model-1'].parts['Beam'].edges[3], MIDDLE))
+mdb.models['Model-1'].parts['Beam'].Set(edges=
+    mdb.models['Model-1'].parts['Beam'].edges.getSequenceFromMask(('[#8 ]', ), 
+    ), name='Hanger2')
+mdb.models['Model-1'].rootAssembly.regenerate()
+mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='Model-1', modelPrint=OFF, 
+    multiprocessingMode=DEFAULT, name='Job-1', nodalOutputPrecision=FULL, 
+    numCpus=2, numDomains=2, numGPUs=0, numThreadsPerMpiProcess=1, queue=None, 
+    resultsFormat=ODB, scratch='', type=ANALYSIS, userSubroutine='', waitHours=
+    0, waitMinutes=0)
+mdb.jobs['Job-1'].submit(consistencyChecking=OFF)
+mdb.jobs['Job-1']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'DESKTOP-DIUKBM0', 'handle': 0, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'THE BEAM MPC HAS A ZERO LENGTH BETWEEN NODES 468 INSTANCE BEAM-1 AND 2745 INSTANCE BEAM-1.  IT WILL BE REPLACED WITH A TIE MPC', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\SIMULIA\\EstProducts\\2022\\win_b64\\resources\\install\\cmdDirFeature\\Job-1.odb', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'DESKTOP-DIUKBM0', 'handle': 22460, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(STEP, {'stepName': 'Loading', 
+    'phase': STANDARD_PHASE, 'stepId': 1, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 0, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': 'Job-1', 'memory': 36.0})
+mdb.jobs['Job-1']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 65472.0, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(MINIMUM_MEMORY, {'minimum_memory': 19.0, 
+    'phase': STANDARD_PHASE, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'Solver problem. Numerical singularity when processing node BEAM-1.77 D.O.F. 1 ratio = 22.2370E+12 .', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 1, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(STATUS, {'totalTime': 1.0, 'attempts': 1, 
+    'timeIncrement': 1.0, 'increment': 1, 'stepTime': 1.0, 'step': 1, 
+    'jobName': 'Job-1', 'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 
+    'equilibrium': 1})
+mdb.jobs['Job-1']._Message(END_STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(JOB_COMPLETED, {'time': 'Mon Apr 24 21:49:55 2023', 
+    'jobName': 'Job-1'})
+# Save by Martin Leung on 2023_04_24-21.52.07; build 2022 2021_09_16-01.57.30 176069
+# Save by Martin Leung on 2023_04_24-21.52.10; build 2022 2021_09_16-01.57.30 176069
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].materials['Steel'].elastic.setValues(table=((
+    200000000000.0, 0.3), ))
+mdb.jobs['Job-1'].submit(consistencyChecking=OFF)
+mdb.jobs['Job-1']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'DESKTOP-DIUKBM0', 'handle': 0, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'THE BEAM MPC HAS A ZERO LENGTH BETWEEN NODES 468 INSTANCE BEAM-1 AND 2745 INSTANCE BEAM-1.  IT WILL BE REPLACED WITH A TIE MPC', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\SIMULIA\\EstProducts\\2022\\win_b64\\resources\\install\\cmdDirFeature\\Job-1.odb', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'DESKTOP-DIUKBM0', 'handle': 29276, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(STEP, {'phase': STANDARD_PHASE, 
+    'stepName': 'Loading', 'stepId': 1, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 0, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'memory': 36.0, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 65472.0, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(MINIMUM_MEMORY, {'minimum_memory': 19.0, 
+    'phase': STANDARD_PHASE, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'Solver problem. Numerical singularity when processing node BEAM-1.77 D.O.F. 1 ratio = 17.0538E+12 .', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 1, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(STATUS, {'totalTime': 1.0, 'increment': 1, 
+    'attempts': 1, 'iterations': 1, 'phase': STANDARD_PHASE, 
+    'timeIncrement': 1.0, 'stepTime': 1.0, 'step': 1, 'jobName': 'Job-1', 
+    'severe': 0, 'equilibrium': 1})
+mdb.jobs['Job-1']._Message(END_STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(JOB_COMPLETED, {'jobName': 'Job-1', 
+    'time': 'Mon Apr 24 21:55:40 2023'})
+mdb.models['Model-1'].materials['Steel'].elastic.setValues(table=((200000.0, 
+    0.3), ))
+mdb.jobs['Job-1'].submit(consistencyChecking=OFF)
+mdb.jobs['Job-1']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'DESKTOP-DIUKBM0', 'handle': 0, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'THE BEAM MPC HAS A ZERO LENGTH BETWEEN NODES 468 INSTANCE BEAM-1 AND 2745 INSTANCE BEAM-1.  IT WILL BE REPLACED WITH A TIE MPC', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\SIMULIA\\EstProducts\\2022\\win_b64\\resources\\install\\cmdDirFeature\\Job-1.odb', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'DESKTOP-DIUKBM0', 'handle': 18196, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(STEP, {'phase': STANDARD_PHASE, 
+    'stepName': 'Loading', 'stepId': 1, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 0, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'memory': 36.0, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 65472.0, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(MINIMUM_MEMORY, {'minimum_memory': 19.0, 
+    'phase': STANDARD_PHASE, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'Solver problem. Numerical singularity when processing node BEAM-1.77 D.O.F. 1 ratio = 22.2370E+12 .', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 1, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(STATUS, {'totalTime': 1.0, 'increment': 1, 
+    'attempts': 1, 'iterations': 1, 'phase': STANDARD_PHASE, 
+    'timeIncrement': 1.0, 'stepTime': 1.0, 'step': 1, 'jobName': 'Job-1', 
+    'severe': 0, 'equilibrium': 1})
+mdb.jobs['Job-1']._Message(END_STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(JOB_COMPLETED, {'jobName': 'Job-1', 
+    'time': 'Mon Apr 24 22:06:25 2023'})
+# Save by Martin Leung on 2023_04_24-23.03.44; build 2022 2021_09_16-01.57.30 176069
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.jobs['Job-1'].submit(consistencyChecking=OFF)
+mdb.jobs['Job-1']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'DESKTOP-DIUKBM0', 'handle': 0, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'THE BEAM MPC HAS A ZERO LENGTH BETWEEN NODES 468 INSTANCE BEAM-1 AND 2745 INSTANCE BEAM-1.  IT WILL BE REPLACED WITH A TIE MPC', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\SIMULIA\\EstProducts\\2022\\win_b64\\resources\\install\\cmdDirFeature\\Job-1.odb', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'DESKTOP-DIUKBM0', 'handle': 27156, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(STEP, {'stepName': 'Loading', 
+    'phase': STANDARD_PHASE, 'stepId': 1, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 0, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': 'Job-1', 'memory': 36.0})
+mdb.jobs['Job-1']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 65472.0, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(MINIMUM_MEMORY, {'minimum_memory': 19.0, 
+    'phase': STANDARD_PHASE, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'Solver problem. Numerical singularity when processing node BEAM-1.77 D.O.F. 1 ratio = 22.2370E+12 .', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 1, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(STATUS, {'totalTime': 1.0, 'attempts': 1, 
+    'timeIncrement': 1.0, 'increment': 1, 'stepTime': 1.0, 'step': 1, 
+    'jobName': 'Job-1', 'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 
+    'equilibrium': 1})
+mdb.jobs['Job-1']._Message(END_STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(JOB_COMPLETED, {'time': 'Mon Apr 24 23:16:52 2023', 
+    'jobName': 'Job-1'})
+# Save by Martin Leung on 2023_04_24-23.36.09; build 2022 2021_09_16-01.57.30 176069
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].loads['Load'].setValues(cf2=-0.4, distributionType=
+    UNIFORM, field='')
+mdb.jobs['Job-1'].submit(consistencyChecking=OFF)
+mdb.jobs['Job-1']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'DESKTOP-DIUKBM0', 'handle': 0, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'THE BEAM MPC HAS A ZERO LENGTH BETWEEN NODES 468 INSTANCE BEAM-1 AND 2745 INSTANCE BEAM-1.  IT WILL BE REPLACED WITH A TIE MPC', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\SIMULIA\\EstProducts\\2022\\win_b64\\resources\\install\\cmdDirFeature\\Job-1.odb', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'DESKTOP-DIUKBM0', 'handle': 18456, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(STEP, {'stepName': 'Loading', 
+    'phase': STANDARD_PHASE, 'stepId': 1, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 0, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': 'Job-1', 'memory': 36.0})
+mdb.jobs['Job-1']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 65472.0, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(MINIMUM_MEMORY, {'minimum_memory': 19.0, 
+    'phase': STANDARD_PHASE, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'Solver problem. Numerical singularity when processing node BEAM-1.77 D.O.F. 1 ratio = 22.2370E+12 .', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 1, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(STATUS, {'totalTime': 1.0, 'attempts': 1, 
+    'timeIncrement': 1.0, 'increment': 1, 'stepTime': 1.0, 'step': 1, 
+    'jobName': 'Job-1', 'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 
+    'equilibrium': 1})
+mdb.jobs['Job-1']._Message(END_STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(JOB_COMPLETED, {'time': 'Mon Apr 24 23:37:49 2023', 
+    'jobName': 'Job-1'})
+mdb.models['Model-1'].loads['Load'].setValues(cf2=-40.0, distributionType=
+    UNIFORM, field='')
+mdb.models['Model-1'].rootAssembly.deleteMesh(regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'], ))
+mdb.models['Model-1'].rootAssembly.seedPartInstance(deviationFactor=0.1, 
+    minSizeFactor=0.1, regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'], ), size=0.588)
+mdb.models['Model-1'].rootAssembly.setElementType(elemTypes=(ElemType(
+    elemCode=C3D8R, elemLibrary=STANDARD, secondOrderAccuracy=OFF, 
+    kinematicSplit=AVERAGE_STRAIN, hourglassControl=DEFAULT, 
+    distortionControl=DEFAULT), ElemType(elemCode=C3D6, elemLibrary=STANDARD), 
+    ElemType(elemCode=C3D4, elemLibrary=STANDARD)), regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'].cells.getSequenceFromMask(
+    ('[#7 ]', ), ), ))
+mdb.models['Model-1'].rootAssembly.generateMesh(regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'], ))
+mdb.jobs['Job-1'].submit(consistencyChecking=OFF)
+mdb.jobs['Job-1']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'DESKTOP-DIUKBM0', 'handle': 0, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'THE BEAM MPC HAS A ZERO LENGTH BETWEEN NODES 2319 INSTANCE BEAM-1 AND 193843 INSTANCE BEAM-1.  IT WILL BE REPLACED WITH A TIE MPC', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\SIMULIA\\EstProducts\\2022\\win_b64\\resources\\install\\cmdDirFeature\\Job-1.odb', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'DESKTOP-DIUKBM0', 'handle': 20064, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(STEP, {'stepName': 'Loading', 
+    'phase': STANDARD_PHASE, 'stepId': 1, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 0, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': 'Job-1', 'memory': 3148.0})
+mdb.jobs['Job-1']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 65472.0, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(MINIMUM_MEMORY, {'minimum_memory': 423.0, 
+    'phase': STANDARD_PHASE, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'Solver problem. Numerical singularity when processing node BEAM-1.322 D.O.F. 1 ratio = 237.260E+09  .', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 1, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(STATUS, {'totalTime': 1.0, 'attempts': 1, 
+    'timeIncrement': 1.0, 'increment': 1, 'stepTime': 1.0, 'step': 1, 
+    'jobName': 'Job-1', 'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 
+    'equilibrium': 1})
+mdb.jobs['Job-1']._Message(END_STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(JOB_COMPLETED, {'time': 'Tue Apr 25 00:08:45 2023', 
+    'jobName': 'Job-1'})
+# Save by Martin Leung on 2023_04_25-00.21.23; build 2022 2021_09_16-01.57.30 176069
+# Save by Martin Leung on 2023_04_25-20.03.53; build 2022 2021_09_16-01.57.30 176069
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].rootAssembly.deleteMesh(regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'], ))
+mdb.models['Model-1'].rootAssembly.seedPartInstance(deviationFactor=0.1, 
+    minSizeFactor=0.1, regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'], ), size=0.5)
+mdb.models['Model-1'].rootAssembly.seedPartInstance(deviationFactor=0.1, 
+    minSizeFactor=0.1, regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'], ), size=0.3)
+mdb.models['Model-1'].rootAssembly.seedPartInstance(deviationFactor=0.1, 
+    minSizeFactor=0.1, regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'], ), size=0.294)
+mdb.models['Model-1'].rootAssembly.setElementType(elemTypes=(ElemType(
+    elemCode=C3D8R, elemLibrary=STANDARD, secondOrderAccuracy=OFF, 
+    kinematicSplit=AVERAGE_STRAIN, hourglassControl=DEFAULT, 
+    distortionControl=DEFAULT), ElemType(elemCode=C3D6, elemLibrary=STANDARD), 
+    ElemType(elemCode=C3D4, elemLibrary=STANDARD)), regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'].cells.getSequenceFromMask(
+    ('[#7 ]', ), ), ))
+mdb.models['Model-1'].rootAssembly.generateMesh(regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'], ))
+mdb.Job(name='3D40N10F', objectToCopy=mdb.jobs['Job-1'])
+mdb.jobs.changeKey(fromName='Job-1', toName='3D40N5F')
+mdb.jobs['3D40N10F'].submit(consistencyChecking=OFF)
+mdb.jobs['3D40N10F']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'DESKTOP-DIUKBM0', 'handle': 0, 'jobName': '3D40N10F'})
+mdb.jobs['3D40N10F']._Message(ERROR, {'phase': BATCHPRE_PHASE, 
+    'message': 'Academic Teaching license is limited to 250000 nodes.', 
+    'jobName': '3D40N10F'})
+mdb.jobs['3D40N10F']._Message(ERROR, {'phase': BATCHPRE_PHASE, 
+    'message': 'ERROR DURING PART, INSTANCE AND ASSEMBLY PROCESSING', 
+    'jobName': '3D40N10F'})
+mdb.jobs['3D40N10F']._Message(ABORTED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase failed due to errors', 'jobName': '3D40N10F'})
+mdb.jobs['3D40N10F']._Message(ERROR, {
+    'message': 'Analysis Input File Processor exited with an error - Please see the  3D40N10F.dat file for possible error messages if the file exists.', 
+    'jobName': '3D40N10F'})
+mdb.jobs['3D40N10F']._Message(JOB_ABORTED, {
+    'message': 'Analysis Input File Processor exited with an error - Please see the  3D40N10F.dat file for possible error messages if the file exists.', 
+    'jobName': '3D40N10F'})
+mdb.models['Model-1'].rootAssembly.deleteMesh(regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'], ))
+mdb.models['Model-1'].rootAssembly.seedPartInstance(deviationFactor=0.1, 
+    minSizeFactor=0.1, regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'], ), size=0.49)
+mdb.models['Model-1'].rootAssembly.setElementType(elemTypes=(ElemType(
+    elemCode=C3D8R, elemLibrary=STANDARD, secondOrderAccuracy=OFF, 
+    kinematicSplit=AVERAGE_STRAIN, hourglassControl=DEFAULT, 
+    distortionControl=DEFAULT), ElemType(elemCode=C3D6, elemLibrary=STANDARD), 
+    ElemType(elemCode=C3D4, elemLibrary=STANDARD)), regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'].cells.getSequenceFromMask(
+    ('[#7 ]', ), ), ))
+mdb.models['Model-1'].rootAssembly.generateMesh(regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'], ))
+mdb.models['Model-1'].rootAssembly.deleteMesh(regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'], ))
+mdb.models['Model-1'].rootAssembly.seedPartInstance(deviationFactor=0.1, 
+    minSizeFactor=0.1, regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'], ), size=0.5)
+mdb.models['Model-1'].rootAssembly.setElementType(elemTypes=(ElemType(
+    elemCode=C3D8R, elemLibrary=STANDARD, secondOrderAccuracy=OFF, 
+    kinematicSplit=AVERAGE_STRAIN, hourglassControl=DEFAULT, 
+    distortionControl=DEFAULT), ElemType(elemCode=C3D6, elemLibrary=STANDARD), 
+    ElemType(elemCode=C3D4, elemLibrary=STANDARD)), regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'].cells.getSequenceFromMask(
+    ('[#7 ]', ), ), ))
+mdb.models['Model-1'].rootAssembly.generateMesh(regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'], ))
+del mdb.jobs['3D40N5F']
+del mdb.jobs['3D40N10F']
+mdb.models['Model-1'].rootAssembly.deleteMesh(regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'], ))
+mdb.models['Model-1'].rootAssembly.seedPartInstance(deviationFactor=0.1, 
+    minSizeFactor=0.1, regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'], ), size=0.588)
+mdb.models['Model-1'].rootAssembly.setElementType(elemTypes=(ElemType(
+    elemCode=C3D8R, elemLibrary=STANDARD, secondOrderAccuracy=OFF, 
+    kinematicSplit=AVERAGE_STRAIN, hourglassControl=DEFAULT, 
+    distortionControl=DEFAULT), ElemType(elemCode=C3D6, elemLibrary=STANDARD), 
+    ElemType(elemCode=C3D4, elemLibrary=STANDARD)), regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'].cells.getSequenceFromMask(
+    ('[#7 ]', ), ), ))
+mdb.models['Model-1'].rootAssembly.generateMesh(regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'], ))
+mdb.models['Model-1'].rootAssembly.deleteMesh(regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'], ))
+mdb.models['Model-1'].rootAssembly.seedPartInstance(deviationFactor=0.1, 
+    minSizeFactor=0.1, regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'], ), size=2.94)
+mdb.models['Model-1'].rootAssembly.setElementType(elemTypes=(ElemType(
+    elemCode=C3D8R, elemLibrary=STANDARD, secondOrderAccuracy=OFF, 
+    kinematicSplit=AVERAGE_STRAIN, hourglassControl=DEFAULT, 
+    distortionControl=DEFAULT), ElemType(elemCode=C3D6, elemLibrary=STANDARD), 
+    ElemType(elemCode=C3D4, elemLibrary=STANDARD)), regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'].cells.getSequenceFromMask(
+    ('[#7 ]', ), ), ))
+mdb.models['Model-1'].rootAssembly.generateMesh(regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'], ))
+mdb.Job(atTime=None, contactPrint=OFF, description=
+    '3D, 40 newton, thickness, divided by 1, 1170 elements', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='Model-1', modelPrint=OFF, 
+    multiprocessingMode=DEFAULT, name='3D40N1F1170', nodalOutputPrecision=FULL, 
+    numCpus=4, numDomains=4, numGPUs=0, numThreadsPerMpiProcess=1, queue=None, 
+    resultsFormat=ODB, scratch='', type=ANALYSIS, userSubroutine='', waitHours=
+    0, waitMinutes=0)
+mdb.jobs['3D40N1F1170'].submit(consistencyChecking=OFF)
+mdb.jobs['3D40N1F1170']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'DESKTOP-DIUKBM0', 'handle': 0, 'jobName': '3D40N1F1170'})
+mdb.jobs['3D40N1F1170']._Message(HEADING, {'phase': BATCHPRE_PHASE, 
+    'heading': '3D, 40 newton, thickness, divided by 1, 1170 elements', 
+    'jobName': '3D40N1F1170'})
+mdb.jobs['3D40N1F1170']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'THE BEAM MPC HAS A ZERO LENGTH BETWEEN NODES 468 INSTANCE BEAM-1 AND 2745 INSTANCE BEAM-1.  IT WILL BE REPLACED WITH A TIE MPC', 
+    'jobName': '3D40N1F1170'})
+mdb.jobs['3D40N1F1170']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\SIMULIA\\EstProducts\\2022\\win_b64\\resources\\install\\cmdDirFeature\\3D40N1F1170.odb', 
+    'jobName': '3D40N1F1170'})
+mdb.jobs['3D40N1F1170']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': '3D40N1F1170'})
+mdb.jobs['3D40N1F1170']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'DESKTOP-DIUKBM0', 'handle': 20496, 
+    'jobName': '3D40N1F1170'})
+mdb.jobs['3D40N1F1170']._Message(STEP, {'stepName': 'Loading', 
+    'phase': STANDARD_PHASE, 'stepId': 1, 'jobName': '3D40N1F1170'})
+mdb.jobs['3D40N1F1170']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 0, 'jobName': '3D40N1F1170'})
+mdb.jobs['3D40N1F1170']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': '3D40N1F1170', 'memory': 36.0})
+mdb.jobs['3D40N1F1170']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 65472.0, 'jobName': '3D40N1F1170'})
+mdb.jobs['3D40N1F1170']._Message(MINIMUM_MEMORY, {'minimum_memory': 19.0, 
+    'phase': STANDARD_PHASE, 'jobName': '3D40N1F1170'})
+mdb.jobs['3D40N1F1170']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'Solver problem. Numerical singularity when processing node BEAM-1.77 D.O.F. 1 ratio = 22.2370E+12 .', 
+    'jobName': '3D40N1F1170'})
+mdb.jobs['3D40N1F1170']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 1, 'jobName': '3D40N1F1170'})
+mdb.jobs['3D40N1F1170']._Message(STATUS, {'totalTime': 1.0, 'attempts': 1, 
+    'timeIncrement': 1.0, 'increment': 1, 'stepTime': 1.0, 'step': 1, 
+    'jobName': '3D40N1F1170', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['3D40N1F1170']._Message(END_STEP, {'phase': STANDARD_PHASE, 
+    'stepId': 1, 'jobName': '3D40N1F1170'})
+mdb.jobs['3D40N1F1170']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': '3D40N1F1170'})
+mdb.jobs['3D40N1F1170']._Message(JOB_COMPLETED, {
+    'time': 'Tue Apr 25 20:37:36 2023', 'jobName': '3D40N1F1170'})
+mdb.models['Model-1'].rootAssembly.deleteMesh(regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'], ))
+mdb.models['Model-1'].rootAssembly.seedPartInstance(deviationFactor=0.1, 
+    minSizeFactor=0.1, regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'], ), size=1.47)
+mdb.models['Model-1'].rootAssembly.setElementType(elemTypes=(ElemType(
+    elemCode=C3D8R, elemLibrary=STANDARD, secondOrderAccuracy=OFF, 
+    kinematicSplit=AVERAGE_STRAIN, hourglassControl=DEFAULT, 
+    distortionControl=DEFAULT), ElemType(elemCode=C3D6, elemLibrary=STANDARD), 
+    ElemType(elemCode=C3D4, elemLibrary=STANDARD)), regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'].cells.getSequenceFromMask(
+    ('[#7 ]', ), ), ))
+mdb.models['Model-1'].rootAssembly.generateMesh(regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'], ))
+mdb.Job(name='3D40N2F10166', objectToCopy=mdb.jobs['3D40N1F1170'])
+mdb.jobs['3D40N2F10166'].submit(consistencyChecking=OFF)
+mdb.jobs['3D40N2F10166']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'DESKTOP-DIUKBM0', 'handle': 0, 'jobName': '3D40N2F10166'})
+mdb.jobs['3D40N2F10166']._Message(HEADING, {'phase': BATCHPRE_PHASE, 
+    'heading': '3D, 40 newton, thickness, divided by 1, 1170 elements', 
+    'jobName': '3D40N2F10166'})
+mdb.jobs['3D40N2F10166']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\SIMULIA\\EstProducts\\2022\\win_b64\\resources\\install\\cmdDirFeature\\3D40N2F10166.odb', 
+    'jobName': '3D40N2F10166'})
+mdb.jobs['3D40N2F10166']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': '3D40N2F10166'})
+mdb.jobs['3D40N2F10166']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'DESKTOP-DIUKBM0', 'handle': 28144, 
+    'jobName': '3D40N2F10166'})
+mdb.jobs['3D40N2F10166']._Message(STEP, {'stepName': 'Loading', 
+    'phase': STANDARD_PHASE, 'stepId': 1, 'jobName': '3D40N2F10166'})
+mdb.jobs['3D40N2F10166']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 0, 'jobName': '3D40N2F10166'})
+mdb.jobs['3D40N2F10166']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': '3D40N2F10166', 'memory': 158.0})
+mdb.jobs['3D40N2F10166']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 65472.0, 'jobName': '3D40N2F10166'})
+mdb.jobs['3D40N2F10166']._Message(MINIMUM_MEMORY, {'minimum_memory': 37.0, 
+    'phase': STANDARD_PHASE, 'jobName': '3D40N2F10166'})
+mdb.jobs['3D40N2F10166']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'Solver problem. Numerical singularity when processing node BEAM-1.138 D.O.F. 1 ratio = 14.5146E+12 .', 
+    'jobName': '3D40N2F10166'})
+mdb.jobs['3D40N2F10166']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 1, 'jobName': '3D40N2F10166'})
+mdb.jobs['3D40N2F10166']._Message(STATUS, {'totalTime': 1.0, 'attempts': 1, 
+    'timeIncrement': 1.0, 'increment': 1, 'stepTime': 1.0, 'step': 1, 
+    'jobName': '3D40N2F10166', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['3D40N2F10166']._Message(END_STEP, {'phase': STANDARD_PHASE, 
+    'stepId': 1, 'jobName': '3D40N2F10166'})
+mdb.jobs['3D40N2F10166']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': '3D40N2F10166'})
+mdb.jobs['3D40N2F10166']._Message(JOB_COMPLETED, {
+    'time': 'Tue Apr 25 20:39:00 2023', 'jobName': '3D40N2F10166'})
+mdb.models['Model-1'].rootAssembly.deleteMesh(regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'], ))
+mdb.models['Model-1'].rootAssembly.seedPartInstance(deviationFactor=0.1, 
+    minSizeFactor=0.1, regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'], ), size=0.98)
+mdb.models['Model-1'].rootAssembly.setElementType(elemTypes=(ElemType(
+    elemCode=C3D8R, elemLibrary=STANDARD, secondOrderAccuracy=OFF, 
+    kinematicSplit=AVERAGE_STRAIN, hourglassControl=DEFAULT, 
+    distortionControl=DEFAULT), ElemType(elemCode=C3D6, elemLibrary=STANDARD), 
+    ElemType(elemCode=C3D4, elemLibrary=STANDARD)), regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'].cells.getSequenceFromMask(
+    ('[#7 ]', ), ), ))
+mdb.models['Model-1'].rootAssembly.generateMesh(regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'], ))
+mdb.Job(name='3D40N3F33459', objectToCopy=mdb.jobs['3D40N2F10166'])
+mdb.jobs['3D40N3F33459'].submit(consistencyChecking=OFF)
+mdb.jobs['3D40N3F33459']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'DESKTOP-DIUKBM0', 'handle': 0, 'jobName': '3D40N3F33459'})
+mdb.models['Model-1'].rootAssembly.deleteMesh(regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'], ))
+mdb.models['Model-1'].rootAssembly.seedPartInstance(deviationFactor=0.1, 
+    minSizeFactor=0.1, regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'], ), size=0.735)
+mdb.jobs['3D40N3F33459']._Message(HEADING, {'phase': BATCHPRE_PHASE, 
+    'heading': '3D, 40 newton, thickness, divided by 1, 1170 elements', 
+    'jobName': '3D40N3F33459'})
+mdb.jobs['3D40N3F33459']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\SIMULIA\\EstProducts\\2022\\win_b64\\resources\\install\\cmdDirFeature\\3D40N3F33459.odb', 
+    'jobName': '3D40N3F33459'})
+mdb.jobs['3D40N3F33459']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': '3D40N3F33459'})
+mdb.models['Model-1'].rootAssembly.setElementType(elemTypes=(ElemType(
+    elemCode=C3D8R, elemLibrary=STANDARD, secondOrderAccuracy=OFF, 
+    kinematicSplit=AVERAGE_STRAIN, hourglassControl=DEFAULT, 
+    distortionControl=DEFAULT), ElemType(elemCode=C3D6, elemLibrary=STANDARD), 
+    ElemType(elemCode=C3D4, elemLibrary=STANDARD)), regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'].cells.getSequenceFromMask(
+    ('[#7 ]', ), ), ))
+mdb.jobs['3D40N3F33459']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'DESKTOP-DIUKBM0', 'handle': 23160, 
+    'jobName': '3D40N3F33459'})
+mdb.jobs['3D40N3F33459']._Message(STEP, {'stepName': 'Loading', 
+    'phase': STANDARD_PHASE, 'stepId': 1, 'jobName': '3D40N3F33459'})
+mdb.jobs['3D40N3F33459']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 0, 'jobName': '3D40N3F33459'})
+mdb.jobs['3D40N3F33459']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': '3D40N3F33459', 'memory': 536.0})
+mdb.jobs['3D40N3F33459']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 65472.0, 'jobName': '3D40N3F33459'})
+mdb.jobs['3D40N3F33459']._Message(MINIMUM_MEMORY, {'minimum_memory': 95.0, 
+    'phase': STANDARD_PHASE, 'jobName': '3D40N3F33459'})
+mdb.models['Model-1'].rootAssembly.generateMesh(regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'], ))
+mdb.jobs['3D40N3F33459']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'Solver problem. Numerical singularity when processing node BEAM-1.200 D.O.F. 1 ratio = 1.55965E+12.', 
+    'jobName': '3D40N3F33459'})
+mdb.jobs['3D40N3F33459']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 1, 'jobName': '3D40N3F33459'})
+mdb.jobs['3D40N3F33459']._Message(STATUS, {'totalTime': 1.0, 'attempts': 1, 
+    'timeIncrement': 1.0, 'increment': 1, 'stepTime': 1.0, 'step': 1, 
+    'jobName': '3D40N3F33459', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['3D40N3F33459']._Message(END_STEP, {'phase': STANDARD_PHASE, 
+    'stepId': 1, 'jobName': '3D40N3F33459'})
+mdb.jobs['3D40N3F33459']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': '3D40N3F33459'})
+mdb.jobs['3D40N3F33459']._Message(JOB_COMPLETED, {
+    'time': 'Tue Apr 25 20:40:25 2023', 'jobName': '3D40N3F33459'})
+mdb.Job(name='3D40N4F81432', objectToCopy=mdb.jobs['3D40N3F33459'])
+mdb.jobs['3D40N4F81432'].submit(consistencyChecking=OFF)
+mdb.jobs['3D40N4F81432']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'DESKTOP-DIUKBM0', 'handle': 0, 'jobName': '3D40N4F81432'})
+mdb.jobs['3D40N4F81432']._Message(HEADING, {'phase': BATCHPRE_PHASE, 
+    'heading': '3D, 40 newton, thickness, divided by 1, 1170 elements', 
+    'jobName': '3D40N4F81432'})
+mdb.models['Model-1'].rootAssembly.deleteMesh(regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'], ))
+mdb.models['Model-1'].rootAssembly.seedPartInstance(deviationFactor=0.1, 
+    minSizeFactor=0.1, regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'], ), size=0.588)
+mdb.jobs['3D40N4F81432']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'THE BEAM MPC HAS A ZERO LENGTH BETWEEN NODES 1858 INSTANCE BEAM-1 AND 105841 INSTANCE BEAM-1.  IT WILL BE REPLACED WITH A TIE MPC', 
+    'jobName': '3D40N4F81432'})
+mdb.jobs['3D40N4F81432']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\SIMULIA\\EstProducts\\2022\\win_b64\\resources\\install\\cmdDirFeature\\3D40N4F81432.odb', 
+    'jobName': '3D40N4F81432'})
+mdb.jobs['3D40N4F81432']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': '3D40N4F81432'})
+mdb.jobs['3D40N4F81432']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'DESKTOP-DIUKBM0', 'handle': 26708, 
+    'jobName': '3D40N4F81432'})
+mdb.jobs['3D40N4F81432']._Message(STEP, {'stepName': 'Loading', 
+    'phase': STANDARD_PHASE, 'stepId': 1, 'jobName': '3D40N4F81432'})
+mdb.models['Model-1'].rootAssembly.setElementType(elemTypes=(ElemType(
+    elemCode=C3D8R, elemLibrary=STANDARD, secondOrderAccuracy=OFF, 
+    kinematicSplit=AVERAGE_STRAIN, hourglassControl=DEFAULT, 
+    distortionControl=DEFAULT), ElemType(elemCode=C3D6, elemLibrary=STANDARD), 
+    ElemType(elemCode=C3D4, elemLibrary=STANDARD)), regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'].cells.getSequenceFromMask(
+    ('[#7 ]', ), ), ))
+mdb.jobs['3D40N4F81432']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 0, 'jobName': '3D40N4F81432'})
+mdb.jobs['3D40N4F81432']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': '3D40N4F81432', 'memory': 1472.0})
+mdb.jobs['3D40N4F81432']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 65472.0, 'jobName': '3D40N4F81432'})
+mdb.jobs['3D40N4F81432']._Message(MINIMUM_MEMORY, {'minimum_memory': 222.0, 
+    'phase': STANDARD_PHASE, 'jobName': '3D40N4F81432'})
+mdb.models['Model-1'].rootAssembly.generateMesh(regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'], ))
+mdb.jobs['3D40N4F81432']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'Solver problem. Numerical singularity when processing node BEAM-1.261 D.O.F. 1 ratio = 773.960E+09  .', 
+    'jobName': '3D40N4F81432'})
+mdb.jobs['3D40N4F81432']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 1, 'jobName': '3D40N4F81432'})
+mdb.jobs['3D40N4F81432']._Message(STATUS, {'totalTime': 1.0, 'attempts': 1, 
+    'timeIncrement': 1.0, 'increment': 1, 'stepTime': 1.0, 'step': 1, 
+    'jobName': '3D40N4F81432', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['3D40N4F81432']._Message(END_STEP, {'phase': STANDARD_PHASE, 
+    'stepId': 1, 'jobName': '3D40N4F81432'})
+mdb.jobs['3D40N4F81432']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': '3D40N4F81432'})
+mdb.jobs['3D40N4F81432']._Message(JOB_COMPLETED, {
+    'time': 'Tue Apr 25 20:41:58 2023', 'jobName': '3D40N4F81432'})
+mdb.Job(name='3D40N5F156480', objectToCopy=mdb.jobs['3D40N4F81432'])
+mdb.jobs['3D40N5F156480'].setValues(description='156480', 
+    numThreadsPerMpiProcess=1)
+mdb.jobs['3D40N1F1170'].setValues(description='1170', numThreadsPerMpiProcess=
+    1)
+mdb.jobs.changeKey(fromName='3D40N1F1170', toName='3D40N1F')
+mdb.jobs['3D40N5F156480'].submit(consistencyChecking=OFF)
+mdb.jobs['3D40N5F156480']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'DESKTOP-DIUKBM0', 'handle': 0, 'jobName': '3D40N5F156480'})
+mdb.jobs['3D40N5F156480']._Message(HEADING, {'phase': BATCHPRE_PHASE, 
+    'heading': '156480', 'jobName': '3D40N5F156480'})
+mdb.jobs['3D40N2F10166'].setValues(description='10166', 
+    numThreadsPerMpiProcess=1)
+mdb.jobs['3D40N5F156480']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'THE BEAM MPC HAS A ZERO LENGTH BETWEEN NODES 2319 INSTANCE BEAM-1 AND 193843 INSTANCE BEAM-1.  IT WILL BE REPLACED WITH A TIE MPC', 
+    'jobName': '3D40N5F156480'})
+mdb.jobs['3D40N5F156480']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\SIMULIA\\EstProducts\\2022\\win_b64\\resources\\install\\cmdDirFeature\\3D40N5F156480.odb', 
+    'jobName': '3D40N5F156480'})
+mdb.jobs['3D40N5F156480']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': '3D40N5F156480'})
+mdb.jobs['3D40N5F156480']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'DESKTOP-DIUKBM0', 'handle': 13376, 
+    'jobName': '3D40N5F156480'})
+mdb.jobs['3D40N5F156480']._Message(STEP, {'stepName': 'Loading', 
+    'phase': STANDARD_PHASE, 'stepId': 1, 'jobName': '3D40N5F156480'})
+mdb.jobs['3D40N5F156480']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 0, 'jobName': '3D40N5F156480'})
+mdb.jobs['3D40N5F156480']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': '3D40N5F156480', 'memory': 3148.0})
+mdb.jobs['3D40N5F156480']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 65472.0, 'jobName': '3D40N5F156480'})
+mdb.jobs['3D40N5F156480']._Message(MINIMUM_MEMORY, {'minimum_memory': 423.0, 
+    'phase': STANDARD_PHASE, 'jobName': '3D40N5F156480'})
+mdb.jobs['3D40N5F156480']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'Solver problem. Numerical singularity when processing node BEAM-1.322 D.O.F. 1 ratio = 237.260E+09  .', 
+    'jobName': '3D40N5F156480'})
+mdb.jobs['3D40N5F156480']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 1, 'jobName': '3D40N5F156480'})
+mdb.jobs['3D40N5F156480']._Message(STATUS, {'totalTime': 1.0, 'attempts': 1, 
+    'timeIncrement': 1.0, 'increment': 1, 'stepTime': 1.0, 'step': 1, 
+    'jobName': '3D40N5F156480', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['3D40N5F156480']._Message(END_STEP, {'phase': STANDARD_PHASE, 
+    'stepId': 1, 'jobName': '3D40N5F156480'})
+mdb.jobs['3D40N5F156480']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': '3D40N5F156480'})
+mdb.jobs['3D40N5F156480']._Message(JOB_COMPLETED, {
+    'time': 'Tue Apr 25 20:44:42 2023', 'jobName': '3D40N5F156480'})
+del mdb.jobs['3D40N1F']
+del mdb.jobs['3D40N2F10166']
+del mdb.jobs['3D40N3F33459']
+del mdb.jobs['3D40N4F81432']
+del mdb.jobs['3D40N5F156480']
+mdb.models['Model-1'].rootAssembly.deleteMesh(regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'], ))
+mdb.models['Model-1'].rootAssembly.seedPartInstance(deviationFactor=0.1, 
+    minSizeFactor=0.1, regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'], ), size=2.94)
+mdb.models['Model-1'].rootAssembly.setElementType(elemTypes=(ElemType(
+    elemCode=C3D8R, elemLibrary=STANDARD, secondOrderAccuracy=OFF, 
+    kinematicSplit=AVERAGE_STRAIN, hourglassControl=DEFAULT, 
+    distortionControl=DEFAULT), ElemType(elemCode=C3D6, elemLibrary=STANDARD), 
+    ElemType(elemCode=C3D4, elemLibrary=STANDARD)), regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'].cells.getSequenceFromMask(
+    ('[#7 ]', ), ), ))
+mdb.models['Model-1'].rootAssembly.generateMesh(regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'], ))
+mdb.Job(atTime=None, contactPrint=OFF, description='1170', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='Model-1', modelPrint=OFF, 
+    multiprocessingMode=DEFAULT, name='3D40N1F', nodalOutputPrecision=FULL, 
+    numCpus=4, numDomains=4, numGPUs=0, numThreadsPerMpiProcess=1, queue=None, 
+    resultsFormat=ODB, scratch='', type=ANALYSIS, userSubroutine='', waitHours=
+    0, waitMinutes=0)
+mdb.jobs['3D40N1F'].submit(consistencyChecking=OFF)
+mdb.jobs['3D40N1F']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'DESKTOP-DIUKBM0', 'handle': 0, 'jobName': '3D40N1F'})
+mdb.jobs['3D40N1F']._Message(HEADING, {'phase': BATCHPRE_PHASE, 
+    'heading': '1170', 'jobName': '3D40N1F'})
+mdb.jobs['3D40N1F']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'THE BEAM MPC HAS A ZERO LENGTH BETWEEN NODES 468 INSTANCE BEAM-1 AND 2745 INSTANCE BEAM-1.  IT WILL BE REPLACED WITH A TIE MPC', 
+    'jobName': '3D40N1F'})
+mdb.jobs['3D40N1F']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\SIMULIA\\EstProducts\\2022\\win_b64\\resources\\install\\cmdDirFeature\\3D40N1F.odb', 
+    'jobName': '3D40N1F'})
+mdb.jobs['3D40N1F']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': '3D40N1F'})
+mdb.jobs['3D40N1F']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'DESKTOP-DIUKBM0', 'handle': 26124, 'jobName': '3D40N1F'})
+mdb.jobs['3D40N1F']._Message(STEP, {'stepName': 'Loading', 
+    'phase': STANDARD_PHASE, 'stepId': 1, 'jobName': '3D40N1F'})
+mdb.jobs['3D40N1F']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 0, 'jobName': '3D40N1F'})
+mdb.jobs['3D40N1F']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': '3D40N1F', 'memory': 36.0})
+mdb.jobs['3D40N1F']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 65472.0, 'jobName': '3D40N1F'})
+mdb.jobs['3D40N1F']._Message(MINIMUM_MEMORY, {'minimum_memory': 19.0, 
+    'phase': STANDARD_PHASE, 'jobName': '3D40N1F'})
+mdb.jobs['3D40N1F']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'Solver problem. Numerical singularity when processing node BEAM-1.77 D.O.F. 1 ratio = 22.2370E+12 .', 
+    'jobName': '3D40N1F'})
+mdb.jobs['3D40N1F']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 1, 'jobName': '3D40N1F'})
+mdb.jobs['3D40N1F']._Message(STATUS, {'totalTime': 1.0, 'attempts': 1, 
+    'timeIncrement': 1.0, 'increment': 1, 'stepTime': 1.0, 'step': 1, 
+    'jobName': '3D40N1F', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['3D40N1F']._Message(END_STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': '3D40N1F'})
+mdb.jobs['3D40N1F']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': '3D40N1F'})
+mdb.jobs['3D40N1F']._Message(JOB_COMPLETED, {
+    'time': 'Tue Apr 25 20:49:38 2023', 'jobName': '3D40N1F'})
+mdb.models['Model-1'].rootAssembly.deleteMesh(regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'], ))
+mdb.models['Model-1'].rootAssembly.seedPartInstance(deviationFactor=0.1, 
+    minSizeFactor=0.1, regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'], ), size=1.47)
+mdb.models['Model-1'].rootAssembly.setElementType(elemTypes=(ElemType(
+    elemCode=C3D8R, elemLibrary=STANDARD, secondOrderAccuracy=OFF, 
+    kinematicSplit=AVERAGE_STRAIN, hourglassControl=DEFAULT, 
+    distortionControl=DEFAULT), ElemType(elemCode=C3D6, elemLibrary=STANDARD), 
+    ElemType(elemCode=C3D4, elemLibrary=STANDARD)), regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'].cells.getSequenceFromMask(
+    ('[#7 ]', ), ), ))
+mdb.models['Model-1'].rootAssembly.generateMesh(regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'], ))
+mdb.Job(name='3D40N2F', objectToCopy=mdb.jobs['3D40N1F'])
+mdb.jobs['3D40N2F'].submit(consistencyChecking=OFF)
+mdb.jobs['3D40N2F']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'DESKTOP-DIUKBM0', 'handle': 0, 'jobName': '3D40N2F'})
+mdb.jobs['3D40N2F']._Message(HEADING, {'phase': BATCHPRE_PHASE, 
+    'heading': '1170', 'jobName': '3D40N2F'})
+mdb.jobs['3D40N2F']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\SIMULIA\\EstProducts\\2022\\win_b64\\resources\\install\\cmdDirFeature\\3D40N2F.odb', 
+    'jobName': '3D40N2F'})
+mdb.jobs['3D40N2F']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': '3D40N2F'})
+mdb.jobs['3D40N2F']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'DESKTOP-DIUKBM0', 'handle': 19868, 'jobName': '3D40N2F'})
+mdb.jobs['3D40N2F']._Message(STEP, {'stepName': 'Loading', 
+    'phase': STANDARD_PHASE, 'stepId': 1, 'jobName': '3D40N2F'})
+mdb.jobs['3D40N2F']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 0, 'jobName': '3D40N2F'})
+mdb.jobs['3D40N2F']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': '3D40N2F', 'memory': 158.0})
+mdb.jobs['3D40N2F']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 65472.0, 'jobName': '3D40N2F'})
+mdb.jobs['3D40N2F']._Message(MINIMUM_MEMORY, {'minimum_memory': 37.0, 
+    'phase': STANDARD_PHASE, 'jobName': '3D40N2F'})
+mdb.jobs['3D40N2F']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'Solver problem. Numerical singularity when processing node BEAM-1.138 D.O.F. 1 ratio = 14.5146E+12 .', 
+    'jobName': '3D40N2F'})
+mdb.jobs['3D40N2F']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 1, 'jobName': '3D40N2F'})
+mdb.jobs['3D40N2F']._Message(STATUS, {'totalTime': 1.0, 'attempts': 1, 
+    'timeIncrement': 1.0, 'increment': 1, 'stepTime': 1.0, 'step': 1, 
+    'jobName': '3D40N2F', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['3D40N2F']._Message(END_STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': '3D40N2F'})
+mdb.jobs['3D40N2F']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': '3D40N2F'})
+mdb.jobs['3D40N2F']._Message(JOB_COMPLETED, {
+    'time': 'Tue Apr 25 20:50:54 2023', 'jobName': '3D40N2F'})
+# Save by Martin Leung on 2023_04_25-21.00.56; build 2022 2021_09_16-01.57.30 176069
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.jobs['3D40N2F'].setValues(description='10166', numThreadsPerMpiProcess=1)
+mdb.jobs['3D40N2F'].submit(consistencyChecking=OFF)
+mdb.jobs['3D40N2F']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'DESKTOP-DIUKBM0', 'handle': 0, 'jobName': '3D40N2F'})
+mdb.jobs['3D40N2F']._Message(HEADING, {'phase': BATCHPRE_PHASE, 
+    'heading': '10166', 'jobName': '3D40N2F'})
+mdb.jobs['3D40N2F']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\SIMULIA\\EstProducts\\2022\\win_b64\\resources\\install\\cmdDirFeature\\3D40N2F.odb', 
+    'jobName': '3D40N2F'})
+mdb.jobs['3D40N2F']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': '3D40N2F'})
+mdb.jobs['3D40N2F']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'DESKTOP-DIUKBM0', 'handle': 26336, 'jobName': '3D40N2F'})
+mdb.jobs['3D40N2F']._Message(STEP, {'stepName': 'Loading', 
+    'phase': STANDARD_PHASE, 'stepId': 1, 'jobName': '3D40N2F'})
+mdb.jobs['3D40N2F']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 0, 'jobName': '3D40N2F'})
+mdb.jobs['3D40N2F']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': '3D40N2F', 'memory': 158.0})
+mdb.jobs['3D40N2F']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 65472.0, 'jobName': '3D40N2F'})
+mdb.jobs['3D40N2F']._Message(MINIMUM_MEMORY, {'minimum_memory': 37.0, 
+    'phase': STANDARD_PHASE, 'jobName': '3D40N2F'})
+mdb.jobs['3D40N2F']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'Solver problem. Numerical singularity when processing node BEAM-1.138 D.O.F. 1 ratio = 14.5146E+12 .', 
+    'jobName': '3D40N2F'})
+mdb.jobs['3D40N2F']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 1, 'jobName': '3D40N2F'})
+mdb.jobs['3D40N2F']._Message(STATUS, {'totalTime': 1.0, 'attempts': 1, 
+    'timeIncrement': 1.0, 'increment': 1, 'stepTime': 1.0, 'step': 1, 
+    'jobName': '3D40N2F', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['3D40N2F']._Message(END_STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': '3D40N2F'})
+mdb.jobs['3D40N2F']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': '3D40N2F'})
+mdb.jobs['3D40N2F']._Message(JOB_COMPLETED, {
+    'time': 'Tue Apr 25 21:03:55 2023', 'jobName': '3D40N2F'})
+mdb.models['Model-1'].rootAssembly.deleteMesh(regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'], ))
+mdb.models['Model-1'].rootAssembly.seedPartInstance(deviationFactor=0.1, 
+    minSizeFactor=0.1, regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'], ), size=0.98)
+mdb.models['Model-1'].rootAssembly.setElementType(elemTypes=(ElemType(
+    elemCode=C3D8R, elemLibrary=STANDARD, secondOrderAccuracy=OFF, 
+    kinematicSplit=AVERAGE_STRAIN, hourglassControl=DEFAULT, 
+    distortionControl=DEFAULT), ElemType(elemCode=C3D6, elemLibrary=STANDARD), 
+    ElemType(elemCode=C3D4, elemLibrary=STANDARD)), regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'].cells.getSequenceFromMask(
+    ('[#7 ]', ), ), ))
+mdb.models['Model-1'].rootAssembly.generateMesh(regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'], ))
+mdb.Job(name='3D40N3F', objectToCopy=mdb.jobs['3D40N2F'])
+mdb.jobs['3D40N3F'].setValues(description='33459', numThreadsPerMpiProcess=1)
+mdb.jobs['3D40N3F'].submit(consistencyChecking=OFF)
+mdb.jobs['3D40N3F']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'DESKTOP-DIUKBM0', 'handle': 0, 'jobName': '3D40N3F'})
+mdb.jobs['3D40N3F']._Message(HEADING, {'phase': BATCHPRE_PHASE, 
+    'heading': '33459', 'jobName': '3D40N3F'})
+mdb.jobs['3D40N3F']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\SIMULIA\\EstProducts\\2022\\win_b64\\resources\\install\\cmdDirFeature\\3D40N3F.odb', 
+    'jobName': '3D40N3F'})
+mdb.jobs['3D40N3F']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': '3D40N3F'})
+mdb.jobs['3D40N3F']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'DESKTOP-DIUKBM0', 'handle': 3168, 'jobName': '3D40N3F'})
+mdb.jobs['3D40N3F']._Message(STEP, {'stepName': 'Loading', 
+    'phase': STANDARD_PHASE, 'stepId': 1, 'jobName': '3D40N3F'})
+mdb.jobs['3D40N3F']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 0, 'jobName': '3D40N3F'})
+mdb.jobs['3D40N3F']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': '3D40N3F', 'memory': 536.0})
+mdb.jobs['3D40N3F']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 65472.0, 'jobName': '3D40N3F'})
+mdb.jobs['3D40N3F']._Message(MINIMUM_MEMORY, {'minimum_memory': 95.0, 
+    'phase': STANDARD_PHASE, 'jobName': '3D40N3F'})
+mdb.jobs['3D40N3F']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'Solver problem. Numerical singularity when processing node BEAM-1.200 D.O.F. 1 ratio = 1.55965E+12.', 
+    'jobName': '3D40N3F'})
+mdb.jobs['3D40N3F']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 1, 'jobName': '3D40N3F'})
+mdb.jobs['3D40N3F']._Message(STATUS, {'totalTime': 1.0, 'attempts': 1, 
+    'timeIncrement': 1.0, 'increment': 1, 'stepTime': 1.0, 'step': 1, 
+    'jobName': '3D40N3F', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['3D40N3F']._Message(END_STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': '3D40N3F'})
+mdb.jobs['3D40N3F']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': '3D40N3F'})
+mdb.jobs['3D40N3F']._Message(JOB_COMPLETED, {
+    'time': 'Tue Apr 25 21:15:39 2023', 'jobName': '3D40N3F'})
+mdb.models['Model-1'].rootAssembly.deleteMesh(regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'], ))
+mdb.models['Model-1'].rootAssembly.seedPartInstance(deviationFactor=0.1, 
+    minSizeFactor=0.1, regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'], ), size=0.735)
+mdb.models['Model-1'].rootAssembly.setElementType(elemTypes=(ElemType(
+    elemCode=C3D8R, elemLibrary=STANDARD, secondOrderAccuracy=OFF, 
+    kinematicSplit=AVERAGE_STRAIN, hourglassControl=DEFAULT, 
+    distortionControl=DEFAULT), ElemType(elemCode=C3D6, elemLibrary=STANDARD), 
+    ElemType(elemCode=C3D4, elemLibrary=STANDARD)), regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'].cells.getSequenceFromMask(
+    ('[#7 ]', ), ), ))
+mdb.models['Model-1'].rootAssembly.generateMesh(regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'], ))
+mdb.Job(name='3D40N4F', objectToCopy=mdb.jobs['3D40N3F'])
+mdb.jobs['3D40N4F'].setValues(description='81432', numThreadsPerMpiProcess=1)
+mdb.jobs['3D40N4F'].submit(consistencyChecking=OFF)
+mdb.jobs['3D40N4F']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'DESKTOP-DIUKBM0', 'handle': 0, 'jobName': '3D40N4F'})
+mdb.jobs['3D40N4F']._Message(HEADING, {'phase': BATCHPRE_PHASE, 
+    'heading': '81432', 'jobName': '3D40N4F'})
+mdb.jobs['3D40N4F']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'THE BEAM MPC HAS A ZERO LENGTH BETWEEN NODES 1858 INSTANCE BEAM-1 AND 105841 INSTANCE BEAM-1.  IT WILL BE REPLACED WITH A TIE MPC', 
+    'jobName': '3D40N4F'})
+mdb.jobs['3D40N4F']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\SIMULIA\\EstProducts\\2022\\win_b64\\resources\\install\\cmdDirFeature\\3D40N4F.odb', 
+    'jobName': '3D40N4F'})
+mdb.jobs['3D40N4F']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': '3D40N4F'})
+mdb.models['Model-1'].rootAssembly.deleteMesh(regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'], ))
+mdb.models['Model-1'].rootAssembly.seedPartInstance(deviationFactor=0.1, 
+    minSizeFactor=0.1, regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'], ), size=0.588)
+mdb.jobs['3D40N4F']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'DESKTOP-DIUKBM0', 'handle': 27580, 'jobName': '3D40N4F'})
+mdb.jobs['3D40N4F']._Message(STEP, {'stepName': 'Loading', 
+    'phase': STANDARD_PHASE, 'stepId': 1, 'jobName': '3D40N4F'})
+mdb.jobs['3D40N4F']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 0, 'jobName': '3D40N4F'})
+mdb.jobs['3D40N4F']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': '3D40N4F', 'memory': 1472.0})
+mdb.jobs['3D40N4F']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 65472.0, 'jobName': '3D40N4F'})
+mdb.jobs['3D40N4F']._Message(MINIMUM_MEMORY, {'minimum_memory': 222.0, 
+    'phase': STANDARD_PHASE, 'jobName': '3D40N4F'})
+mdb.models['Model-1'].rootAssembly.setElementType(elemTypes=(ElemType(
+    elemCode=C3D8R, elemLibrary=STANDARD, secondOrderAccuracy=OFF, 
+    kinematicSplit=AVERAGE_STRAIN, hourglassControl=DEFAULT, 
+    distortionControl=DEFAULT), ElemType(elemCode=C3D6, elemLibrary=STANDARD), 
+    ElemType(elemCode=C3D4, elemLibrary=STANDARD)), regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'].cells.getSequenceFromMask(
+    ('[#7 ]', ), ), ))
+mdb.jobs['3D40N4F']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'Solver problem. Numerical singularity when processing node BEAM-1.261 D.O.F. 1 ratio = 773.960E+09  .', 
+    'jobName': '3D40N4F'})
+mdb.jobs['3D40N4F']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 1, 'jobName': '3D40N4F'})
+mdb.jobs['3D40N4F']._Message(STATUS, {'totalTime': 1.0, 'attempts': 1, 
+    'timeIncrement': 1.0, 'increment': 1, 'stepTime': 1.0, 'step': 1, 
+    'jobName': '3D40N4F', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['3D40N4F']._Message(END_STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': '3D40N4F'})
+mdb.jobs['3D40N4F']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': '3D40N4F'})
+mdb.jobs['3D40N4F']._Message(JOB_COMPLETED, {
+    'time': 'Tue Apr 25 21:18:24 2023', 'jobName': '3D40N4F'})
+mdb.models['Model-1'].rootAssembly.generateMesh(regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'], ))
+mdb.Job(name='3D40N5F', objectToCopy=mdb.jobs['3D40N4F'])
+mdb.jobs['3D40N5F'].setValues(description='156480', numThreadsPerMpiProcess=1)
+mdb.jobs['3D40N5F'].submit(consistencyChecking=OFF)
+mdb.jobs['3D40N5F']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'DESKTOP-DIUKBM0', 'handle': 0, 'jobName': '3D40N5F'})
+mdb.jobs['3D40N5F']._Message(HEADING, {'phase': BATCHPRE_PHASE, 
+    'heading': '156480', 'jobName': '3D40N5F'})
+mdb.jobs['3D40N5F']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'THE BEAM MPC HAS A ZERO LENGTH BETWEEN NODES 2319 INSTANCE BEAM-1 AND 193843 INSTANCE BEAM-1.  IT WILL BE REPLACED WITH A TIE MPC', 
+    'jobName': '3D40N5F'})
+mdb.jobs['3D40N5F']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\SIMULIA\\EstProducts\\2022\\win_b64\\resources\\install\\cmdDirFeature\\3D40N5F.odb', 
+    'jobName': '3D40N5F'})
+mdb.jobs['3D40N5F']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': '3D40N5F'})
+mdb.jobs['3D40N5F']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'DESKTOP-DIUKBM0', 'handle': 11628, 'jobName': '3D40N5F'})
+mdb.jobs['3D40N5F']._Message(STEP, {'stepName': 'Loading', 
+    'phase': STANDARD_PHASE, 'stepId': 1, 'jobName': '3D40N5F'})
+mdb.jobs['3D40N5F']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 0, 'jobName': '3D40N5F'})
+mdb.jobs['3D40N5F']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': '3D40N5F', 'memory': 3148.0})
+mdb.jobs['3D40N5F']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 65472.0, 'jobName': '3D40N5F'})
+mdb.jobs['3D40N5F']._Message(MINIMUM_MEMORY, {'minimum_memory': 423.0, 
+    'phase': STANDARD_PHASE, 'jobName': '3D40N5F'})
+mdb.jobs['3D40N5F']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'Solver problem. Numerical singularity when processing node BEAM-1.322 D.O.F. 1 ratio = 237.260E+09  .', 
+    'jobName': '3D40N5F'})
+mdb.jobs['3D40N5F']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 1, 'jobName': '3D40N5F'})
+mdb.jobs['3D40N5F']._Message(STATUS, {'totalTime': 1.0, 'attempts': 1, 
+    'timeIncrement': 1.0, 'increment': 1, 'stepTime': 1.0, 'step': 1, 
+    'jobName': '3D40N5F', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['3D40N5F']._Message(END_STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': '3D40N5F'})
+mdb.jobs['3D40N5F']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': '3D40N5F'})
+mdb.jobs['3D40N5F']._Message(JOB_COMPLETED, {
+    'time': 'Tue Apr 25 22:32:46 2023', 'jobName': '3D40N5F'})
+mdb.models['Model-1'].rootAssembly.deleteMesh(regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'], ))
+mdb.models['Model-1'].rootAssembly.seedPartInstance(deviationFactor=0.1, 
+    minSizeFactor=0.1, regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'], ), size=0.51)
+mdb.models['Model-1'].rootAssembly.setElementType(elemTypes=(ElemType(
+    elemCode=C3D8R, elemLibrary=STANDARD, secondOrderAccuracy=OFF, 
+    kinematicSplit=AVERAGE_STRAIN, hourglassControl=DEFAULT, 
+    distortionControl=DEFAULT), ElemType(elemCode=C3D6, elemLibrary=STANDARD), 
+    ElemType(elemCode=C3D4, elemLibrary=STANDARD)), regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'].cells.getSequenceFromMask(
+    ('[#7 ]', ), ), ))
+mdb.models['Model-1'].rootAssembly.generateMesh(regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'], ))
+mdb.models['Model-1'].rootAssembly.deleteMesh(regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'], ))
+mdb.models['Model-1'].rootAssembly.seedPartInstance(deviationFactor=0.1, 
+    minSizeFactor=0.1, regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'], ), size=0.52)
+mdb.models['Model-1'].rootAssembly.setElementType(elemTypes=(ElemType(
+    elemCode=C3D8R, elemLibrary=STANDARD, secondOrderAccuracy=OFF, 
+    kinematicSplit=AVERAGE_STRAIN, hourglassControl=DEFAULT, 
+    distortionControl=DEFAULT), ElemType(elemCode=C3D6, elemLibrary=STANDARD), 
+    ElemType(elemCode=C3D4, elemLibrary=STANDARD)), regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'].cells.getSequenceFromMask(
+    ('[#7 ]', ), ), ))
+mdb.models['Model-1'].rootAssembly.generateMesh(regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'], ))
+mdb.models['Model-1'].rootAssembly.deleteMesh(regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'], ))
+mdb.models['Model-1'].rootAssembly.seedPartInstance(deviationFactor=0.1, 
+    minSizeFactor=0.1, regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'], ), size=0.525)
+mdb.models['Model-1'].rootAssembly.setElementType(elemTypes=(ElemType(
+    elemCode=C3D8R, elemLibrary=STANDARD, secondOrderAccuracy=OFF, 
+    kinematicSplit=AVERAGE_STRAIN, hourglassControl=DEFAULT, 
+    distortionControl=DEFAULT), ElemType(elemCode=C3D6, elemLibrary=STANDARD), 
+    ElemType(elemCode=C3D4, elemLibrary=STANDARD)), regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'].cells.getSequenceFromMask(
+    ('[#7 ]', ), ), ))
+mdb.models['Model-1'].rootAssembly.generateMesh(regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'], ))
+mdb.models['Model-1'].rootAssembly.deleteMesh(regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'], ))
+mdb.models['Model-1'].rootAssembly.seedPartInstance(deviationFactor=0.1, 
+    minSizeFactor=0.1, regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'], ), size=0.515)
+mdb.models['Model-1'].rootAssembly.setElementType(elemTypes=(ElemType(
+    elemCode=C3D8R, elemLibrary=STANDARD, secondOrderAccuracy=OFF, 
+    kinematicSplit=AVERAGE_STRAIN, hourglassControl=DEFAULT, 
+    distortionControl=DEFAULT), ElemType(elemCode=C3D6, elemLibrary=STANDARD), 
+    ElemType(elemCode=C3D4, elemLibrary=STANDARD)), regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'].cells.getSequenceFromMask(
+    ('[#7 ]', ), ), ))
+mdb.models['Model-1'].rootAssembly.generateMesh(regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'], ))
+mdb.Job(name='3D40N0515', objectToCopy=mdb.jobs['3D40N5F'])
+mdb.jobs['3D40N0515'].setValues(description='247974', numThreadsPerMpiProcess=
+    1)
+mdb.jobs['3D40N0515'].submit(consistencyChecking=OFF)
+mdb.jobs['3D40N0515']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'DESKTOP-DIUKBM0', 'handle': 0, 'jobName': '3D40N0515'})
+mdb.jobs['3D40N0515']._Message(ERROR, {'phase': BATCHPRE_PHASE, 
+    'message': 'Academic Teaching license is limited to 250000 nodes.', 
+    'jobName': '3D40N0515'})
+mdb.jobs['3D40N0515']._Message(ERROR, {'phase': BATCHPRE_PHASE, 
+    'message': 'ERROR DURING PART, INSTANCE AND ASSEMBLY PROCESSING', 
+    'jobName': '3D40N0515'})
+mdb.jobs['3D40N0515']._Message(ABORTED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase failed due to errors', 'jobName': '3D40N0515'})
+mdb.jobs['3D40N0515']._Message(ERROR, {
+    'message': 'Analysis Input File Processor exited with an error - Please see the  3D40N0515.dat file for possible error messages if the file exists.', 
+    'jobName': '3D40N0515'})
+mdb.jobs['3D40N0515']._Message(JOB_ABORTED, {
+    'message': 'Analysis Input File Processor exited with an error - Please see the  3D40N0515.dat file for possible error messages if the file exists.', 
+    'jobName': '3D40N0515'})
+mdb.models['Model-1'].rootAssembly.deleteMesh(regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'], ))
+mdb.models['Model-1'].rootAssembly.seedPartInstance(deviationFactor=0.1, 
+    minSizeFactor=0.1, regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'], ), size=0.52)
+mdb.models['Model-1'].rootAssembly.setElementType(elemTypes=(ElemType(
+    elemCode=C3D8R, elemLibrary=STANDARD, secondOrderAccuracy=OFF, 
+    kinematicSplit=AVERAGE_STRAIN, hourglassControl=DEFAULT, 
+    distortionControl=DEFAULT), ElemType(elemCode=C3D6, elemLibrary=STANDARD), 
+    ElemType(elemCode=C3D4, elemLibrary=STANDARD)), regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'].cells.getSequenceFromMask(
+    ('[#7 ]', ), ), ))
+mdb.models['Model-1'].rootAssembly.generateMesh(regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'], ))
+mdb.jobs['3D40N0515'].setValues(description='239112', numThreadsPerMpiProcess=
+    1)
+mdb.jobs.changeKey(fromName='3D40N0515', toName='3D40N052')
+mdb.jobs['3D40N052'].submit(consistencyChecking=OFF)
+mdb.jobs['3D40N052']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'DESKTOP-DIUKBM0', 'handle': 0, 'jobName': '3D40N052'})
+mdb.jobs['3D40N052']._Message(ERROR, {'phase': BATCHPRE_PHASE, 
+    'message': 'Academic Teaching license is limited to 250000 nodes.', 
+    'jobName': '3D40N052'})
+mdb.jobs['3D40N052']._Message(ERROR, {'phase': BATCHPRE_PHASE, 
+    'message': 'ERROR DURING PART, INSTANCE AND ASSEMBLY PROCESSING', 
+    'jobName': '3D40N052'})
+mdb.jobs['3D40N052']._Message(ABORTED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase failed due to errors', 'jobName': '3D40N052'})
+mdb.jobs['3D40N052']._Message(ERROR, {
+    'message': 'Analysis Input File Processor exited with an error - Please see the  3D40N052.dat file for possible error messages if the file exists.', 
+    'jobName': '3D40N052'})
+mdb.jobs['3D40N052']._Message(JOB_ABORTED, {
+    'message': 'Analysis Input File Processor exited with an error - Please see the  3D40N052.dat file for possible error messages if the file exists.', 
+    'jobName': '3D40N052'})
+mdb.meshEditOptions.setValues(enableUndo=True, maxUndoCacheElements=0.5)
+del mdb.jobs['3D40N052']
+mdb.models['Model-1'].rootAssembly.deleteMesh(regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'], ))
+mdb.models['Model-1'].rootAssembly.seedPartInstance(deviationFactor=0.1, 
+    minSizeFactor=0.1, regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'], ), size=0.588)
+mdb.models['Model-1'].rootAssembly.setElementType(elemTypes=(ElemType(
+    elemCode=C3D8R, elemLibrary=STANDARD, secondOrderAccuracy=OFF, 
+    kinematicSplit=AVERAGE_STRAIN, hourglassControl=DEFAULT, 
+    distortionControl=DEFAULT), ElemType(elemCode=C3D6, elemLibrary=STANDARD), 
+    ElemType(elemCode=C3D4, elemLibrary=STANDARD)), regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'].cells.getSequenceFromMask(
+    ('[#7 ]', ), ), ))
+mdb.models['Model-1'].rootAssembly.generateMesh(regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Beam-1'], ))
+mdb.models['Model-1'].loads['Load'].setValues(cf2=-5.0, distributionType=
+    UNIFORM, field='')
+mdb.Job(name='3D5N5F', objectToCopy=mdb.jobs['3D40N5F'])
+mdb.jobs['3D5N5F'].submit(consistencyChecking=OFF)
+mdb.jobs['3D5N5F']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'DESKTOP-DIUKBM0', 'handle': 0, 'jobName': '3D5N5F'})
+mdb.jobs['3D5N5F']._Message(HEADING, {'phase': BATCHPRE_PHASE, 
+    'heading': '156480', 'jobName': '3D5N5F'})
+mdb.models['Model-1'].loads['Load'].setValues(cf2=-10.0, distributionType=
+    UNIFORM, field='')
+mdb.jobs['3D5N5F']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'THE BEAM MPC HAS A ZERO LENGTH BETWEEN NODES 2319 INSTANCE BEAM-1 AND 193843 INSTANCE BEAM-1.  IT WILL BE REPLACED WITH A TIE MPC', 
+    'jobName': '3D5N5F'})
+mdb.jobs['3D5N5F']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\SIMULIA\\EstProducts\\2022\\win_b64\\resources\\install\\cmdDirFeature\\3D5N5F.odb', 
+    'jobName': '3D5N5F'})
+mdb.jobs['3D5N5F']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': '3D5N5F'})
+mdb.jobs['3D5N5F']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'DESKTOP-DIUKBM0', 'handle': 9344, 'jobName': '3D5N5F'})
+mdb.jobs['3D5N5F']._Message(STEP, {'stepName': 'Loading', 
+    'phase': STANDARD_PHASE, 'stepId': 1, 'jobName': '3D5N5F'})
+mdb.jobs['3D5N5F']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 0, 'jobName': '3D5N5F'})
+mdb.jobs['3D5N5F']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': '3D5N5F', 'memory': 3148.0})
+mdb.jobs['3D5N5F']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 65472.0, 'jobName': '3D5N5F'})
+mdb.jobs['3D5N5F']._Message(MINIMUM_MEMORY, {'minimum_memory': 423.0, 
+    'phase': STANDARD_PHASE, 'jobName': '3D5N5F'})
+mdb.Job(name='3D10N5F', objectToCopy=mdb.jobs['3D5N5F'])
+mdb.jobs['3D5N5F']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'Solver problem. Numerical singularity when processing node BEAM-1.322 D.O.F. 1 ratio = 237.260E+09  .', 
+    'jobName': '3D5N5F'})
+mdb.jobs['3D5N5F']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 1, 'jobName': '3D5N5F'})
+mdb.jobs['3D5N5F']._Message(STATUS, {'totalTime': 1.0, 'attempts': 1, 
+    'timeIncrement': 1.0, 'increment': 1, 'stepTime': 1.0, 'step': 1, 
+    'jobName': '3D5N5F', 'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 
+    'equilibrium': 1})
+mdb.jobs['3D5N5F']._Message(END_STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': '3D5N5F'})
+mdb.jobs['3D5N5F']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': '3D5N5F'})
+mdb.jobs['3D10N5F'].submit(consistencyChecking=OFF)
+mdb.jobs['3D5N5F']._Message(JOB_COMPLETED, {'time': 'Wed Apr 26 02:29:39 2023', 
+    'jobName': '3D5N5F'})
+mdb.jobs['3D10N5F']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'DESKTOP-DIUKBM0', 'handle': 0, 'jobName': '3D10N5F'})
+mdb.jobs['3D10N5F']._Message(HEADING, {'phase': BATCHPRE_PHASE, 
+    'heading': '156480', 'jobName': '3D10N5F'})
+mdb.jobs['3D10N5F']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'THE BEAM MPC HAS A ZERO LENGTH BETWEEN NODES 2319 INSTANCE BEAM-1 AND 193843 INSTANCE BEAM-1.  IT WILL BE REPLACED WITH A TIE MPC', 
+    'jobName': '3D10N5F'})
+mdb.jobs['3D10N5F']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\SIMULIA\\EstProducts\\2022\\win_b64\\resources\\install\\cmdDirFeature\\3D10N5F.odb', 
+    'jobName': '3D10N5F'})
+mdb.jobs['3D10N5F']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': '3D10N5F'})
+mdb.jobs['3D10N5F']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'DESKTOP-DIUKBM0', 'handle': 15824, 'jobName': '3D10N5F'})
+mdb.models['Model-1'].loads['Load'].setValues(cf2=-15.0, distributionType=
+    UNIFORM, field='')
+mdb.jobs['3D10N5F']._Message(STEP, {'stepName': 'Loading', 
+    'phase': STANDARD_PHASE, 'stepId': 1, 'jobName': '3D10N5F'})
+mdb.jobs['3D10N5F']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 0, 'jobName': '3D10N5F'})
+mdb.jobs['3D10N5F']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': '3D10N5F', 'memory': 3148.0})
+mdb.jobs['3D10N5F']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 65472.0, 'jobName': '3D10N5F'})
+mdb.jobs['3D10N5F']._Message(MINIMUM_MEMORY, {'minimum_memory': 423.0, 
+    'phase': STANDARD_PHASE, 'jobName': '3D10N5F'})
+mdb.jobs['3D10N5F']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'Solver problem. Numerical singularity when processing node BEAM-1.322 D.O.F. 1 ratio = 237.260E+09  .', 
+    'jobName': '3D10N5F'})
+mdb.jobs['3D10N5F']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 1, 'jobName': '3D10N5F'})
+mdb.jobs['3D10N5F']._Message(STATUS, {'totalTime': 1.0, 'attempts': 1, 
+    'timeIncrement': 1.0, 'increment': 1, 'stepTime': 1.0, 'step': 1, 
+    'jobName': '3D10N5F', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['3D10N5F']._Message(END_STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': '3D10N5F'})
+mdb.jobs['3D10N5F']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': '3D10N5F'})
+mdb.Job(name='3D15N5F', objectToCopy=mdb.jobs['3D10N5F'])
+mdb.jobs['3D10N5F']._Message(JOB_COMPLETED, {
+    'time': 'Wed Apr 26 02:30:31 2023', 'jobName': '3D10N5F'})
+mdb.jobs['3D15N5F'].submit(consistencyChecking=OFF)
+mdb.jobs['3D15N5F']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'DESKTOP-DIUKBM0', 'handle': 0, 'jobName': '3D15N5F'})
+mdb.jobs['3D15N5F']._Message(HEADING, {'phase': BATCHPRE_PHASE, 
+    'heading': '156480', 'jobName': '3D15N5F'})
+mdb.jobs['3D15N5F']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'THE BEAM MPC HAS A ZERO LENGTH BETWEEN NODES 2319 INSTANCE BEAM-1 AND 193843 INSTANCE BEAM-1.  IT WILL BE REPLACED WITH A TIE MPC', 
+    'jobName': '3D15N5F'})
+mdb.jobs['3D15N5F']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\SIMULIA\\EstProducts\\2022\\win_b64\\resources\\install\\cmdDirFeature\\3D15N5F.odb', 
+    'jobName': '3D15N5F'})
+mdb.jobs['3D15N5F']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': '3D15N5F'})
+mdb.jobs['3D15N5F']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'DESKTOP-DIUKBM0', 'handle': 20140, 'jobName': '3D15N5F'})
+mdb.jobs['3D15N5F']._Message(STEP, {'stepName': 'Loading', 
+    'phase': STANDARD_PHASE, 'stepId': 1, 'jobName': '3D15N5F'})
+mdb.jobs['3D15N5F']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 0, 'jobName': '3D15N5F'})
+mdb.jobs['3D15N5F']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': '3D15N5F', 'memory': 3148.0})
+mdb.jobs['3D15N5F']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 65472.0, 'jobName': '3D15N5F'})
+mdb.jobs['3D15N5F']._Message(MINIMUM_MEMORY, {'minimum_memory': 423.0, 
+    'phase': STANDARD_PHASE, 'jobName': '3D15N5F'})
+mdb.jobs['3D15N5F']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'Solver problem. Numerical singularity when processing node BEAM-1.322 D.O.F. 1 ratio = 237.260E+09  .', 
+    'jobName': '3D15N5F'})
+mdb.jobs['3D15N5F']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 1, 'jobName': '3D15N5F'})
+mdb.jobs['3D15N5F']._Message(STATUS, {'totalTime': 1.0, 'attempts': 1, 
+    'timeIncrement': 1.0, 'increment': 1, 'stepTime': 1.0, 'step': 1, 
+    'jobName': '3D15N5F', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['3D15N5F']._Message(END_STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': '3D15N5F'})
+mdb.jobs['3D15N5F']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': '3D15N5F'})
+mdb.jobs['3D15N5F']._Message(JOB_COMPLETED, {
+    'time': 'Wed Apr 26 02:31:33 2023', 'jobName': '3D15N5F'})
+mdb.models['Model-1'].loads['Load'].setValues(cf2=-20.0, distributionType=
+    UNIFORM, field='')
+mdb.Job(name='3D20N5F', objectToCopy=mdb.jobs['3D15N5F'])
+mdb.jobs['3D20N5F'].submit(consistencyChecking=OFF)
+mdb.models['Model-1'].loads['Load'].setValues(cf2=-25.0, distributionType=
+    UNIFORM, field='')
+mdb.jobs['3D20N5F']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'DESKTOP-DIUKBM0', 'handle': 0, 'jobName': '3D20N5F'})
+mdb.jobs['3D20N5F']._Message(HEADING, {'phase': BATCHPRE_PHASE, 
+    'heading': '156480', 'jobName': '3D20N5F'})
+mdb.jobs['3D20N5F']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'THE BEAM MPC HAS A ZERO LENGTH BETWEEN NODES 2319 INSTANCE BEAM-1 AND 193843 INSTANCE BEAM-1.  IT WILL BE REPLACED WITH A TIE MPC', 
+    'jobName': '3D20N5F'})
+mdb.jobs['3D20N5F']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\SIMULIA\\EstProducts\\2022\\win_b64\\resources\\install\\cmdDirFeature\\3D20N5F.odb', 
+    'jobName': '3D20N5F'})
+mdb.Job(name='3D25N5F', objectToCopy=mdb.jobs['3D20N5F'])
+mdb.jobs['3D20N5F']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': '3D20N5F'})
+mdb.jobs['3D25N5F'].submit(consistencyChecking=OFF)
+mdb.jobs['3D20N5F']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'DESKTOP-DIUKBM0', 'handle': 16588, 'jobName': '3D20N5F'})
+mdb.jobs['3D20N5F']._Message(STEP, {'stepName': 'Loading', 
+    'phase': STANDARD_PHASE, 'stepId': 1, 'jobName': '3D20N5F'})
+mdb.jobs['3D20N5F']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 0, 'jobName': '3D20N5F'})
+mdb.jobs['3D20N5F']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': '3D20N5F', 'memory': 3148.0})
+mdb.jobs['3D20N5F']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 65472.0, 'jobName': '3D20N5F'})
+mdb.jobs['3D20N5F']._Message(MINIMUM_MEMORY, {'minimum_memory': 423.0, 
+    'phase': STANDARD_PHASE, 'jobName': '3D20N5F'})
+mdb.jobs['3D20N5F']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'Solver problem. Numerical singularity when processing node BEAM-1.322 D.O.F. 1 ratio = 237.260E+09  .', 
+    'jobName': '3D20N5F'})
+mdb.jobs['3D20N5F']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 1, 'jobName': '3D20N5F'})
+mdb.jobs['3D20N5F']._Message(STATUS, {'totalTime': 1.0, 'attempts': 1, 
+    'timeIncrement': 1.0, 'increment': 1, 'stepTime': 1.0, 'step': 1, 
+    'jobName': '3D20N5F', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['3D20N5F']._Message(END_STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': '3D20N5F'})
+mdb.jobs['3D20N5F']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': '3D20N5F'})
+mdb.jobs['3D20N5F']._Message(JOB_COMPLETED, {
+    'time': 'Wed Apr 26 02:32:58 2023', 'jobName': '3D20N5F'})
+mdb.models['Model-1'].loads['Load'].setValues(cf2=-30.0, distributionType=
+    UNIFORM, field='')
+mdb.jobs['3D25N5F']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'DESKTOP-DIUKBM0', 'handle': 0, 'jobName': '3D25N5F'})
+mdb.jobs['3D25N5F']._Message(HEADING, {'phase': BATCHPRE_PHASE, 
+    'heading': '156480', 'jobName': '3D25N5F'})
+mdb.jobs['3D25N5F']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'THE BEAM MPC HAS A ZERO LENGTH BETWEEN NODES 2319 INSTANCE BEAM-1 AND 193843 INSTANCE BEAM-1.  IT WILL BE REPLACED WITH A TIE MPC', 
+    'jobName': '3D25N5F'})
+mdb.jobs['3D25N5F']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\SIMULIA\\EstProducts\\2022\\win_b64\\resources\\install\\cmdDirFeature\\3D25N5F.odb', 
+    'jobName': '3D25N5F'})
+mdb.jobs['3D25N5F']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': '3D25N5F'})
+mdb.jobs['3D25N5F']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'DESKTOP-DIUKBM0', 'handle': 16064, 'jobName': '3D25N5F'})
+mdb.jobs['3D25N5F']._Message(STEP, {'stepName': 'Loading', 
+    'phase': STANDARD_PHASE, 'stepId': 1, 'jobName': '3D25N5F'})
+mdb.Job(name='3D30N5F', objectToCopy=mdb.jobs['3D25N5F'])
+mdb.jobs['3D25N5F']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 0, 'jobName': '3D25N5F'})
+mdb.jobs['3D30N5F'].submit(consistencyChecking=OFF)
+mdb.jobs['3D25N5F']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': '3D25N5F', 'memory': 3148.0})
+mdb.jobs['3D25N5F']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 65472.0, 'jobName': '3D25N5F'})
+mdb.jobs['3D25N5F']._Message(MINIMUM_MEMORY, {'minimum_memory': 423.0, 
+    'phase': STANDARD_PHASE, 'jobName': '3D25N5F'})
+mdb.jobs['3D25N5F']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'Solver problem. Numerical singularity when processing node BEAM-1.322 D.O.F. 1 ratio = 237.260E+09  .', 
+    'jobName': '3D25N5F'})
+mdb.jobs['3D25N5F']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 1, 'jobName': '3D25N5F'})
+mdb.jobs['3D25N5F']._Message(STATUS, {'totalTime': 1.0, 'attempts': 1, 
+    'timeIncrement': 1.0, 'increment': 1, 'stepTime': 1.0, 'step': 1, 
+    'jobName': '3D25N5F', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['3D25N5F']._Message(END_STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': '3D25N5F'})
+mdb.jobs['3D25N5F']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': '3D25N5F'})
+mdb.jobs['3D25N5F']._Message(JOB_COMPLETED, {
+    'time': 'Wed Apr 26 02:33:40 2023', 'jobName': '3D25N5F'})
+mdb.jobs['3D30N5F']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'DESKTOP-DIUKBM0', 'handle': 0, 'jobName': '3D30N5F'})
+mdb.models['Model-1'].loads['Load'].setValues(cf2=-35.0, distributionType=
+    UNIFORM, field='')
+mdb.jobs['3D30N5F']._Message(HEADING, {'phase': BATCHPRE_PHASE, 
+    'heading': '156480', 'jobName': '3D30N5F'})
+mdb.jobs['3D30N5F']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'THE BEAM MPC HAS A ZERO LENGTH BETWEEN NODES 2319 INSTANCE BEAM-1 AND 193843 INSTANCE BEAM-1.  IT WILL BE REPLACED WITH A TIE MPC', 
+    'jobName': '3D30N5F'})
+mdb.jobs['3D30N5F']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\SIMULIA\\EstProducts\\2022\\win_b64\\resources\\install\\cmdDirFeature\\3D30N5F.odb', 
+    'jobName': '3D30N5F'})
+mdb.jobs['3D30N5F']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': '3D30N5F'})
+mdb.jobs['3D30N5F']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'DESKTOP-DIUKBM0', 'handle': 28932, 'jobName': '3D30N5F'})
+mdb.jobs['3D30N5F']._Message(STEP, {'stepName': 'Loading', 
+    'phase': STANDARD_PHASE, 'stepId': 1, 'jobName': '3D30N5F'})
+mdb.jobs['3D30N5F']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 0, 'jobName': '3D30N5F'})
+mdb.Job(name='3D35N5F', objectToCopy=mdb.jobs['3D30N5F'])
+mdb.jobs['3D35N5F'].submit(consistencyChecking=OFF)
+mdb.jobs['3D30N5F']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': '3D30N5F', 'memory': 3148.0})
+mdb.jobs['3D30N5F']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 65472.0, 'jobName': '3D30N5F'})
+mdb.jobs['3D30N5F']._Message(MINIMUM_MEMORY, {'minimum_memory': 423.0, 
+    'phase': STANDARD_PHASE, 'jobName': '3D30N5F'})
+mdb.jobs['3D30N5F']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'Solver problem. Numerical singularity when processing node BEAM-1.322 D.O.F. 1 ratio = 237.260E+09  .', 
+    'jobName': '3D30N5F'})
+mdb.jobs['3D30N5F']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 1, 'jobName': '3D30N5F'})
+mdb.jobs['3D30N5F']._Message(STATUS, {'totalTime': 1.0, 'attempts': 1, 
+    'timeIncrement': 1.0, 'increment': 1, 'stepTime': 1.0, 'step': 1, 
+    'jobName': '3D30N5F', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['3D30N5F']._Message(END_STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': '3D30N5F'})
+mdb.jobs['3D30N5F']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': '3D30N5F'})
+mdb.jobs['3D30N5F']._Message(JOB_COMPLETED, {
+    'time': 'Wed Apr 26 02:34:28 2023', 'jobName': '3D30N5F'})
+mdb.jobs['3D35N5F']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'DESKTOP-DIUKBM0', 'handle': 0, 'jobName': '3D35N5F'})
+mdb.jobs['3D35N5F']._Message(HEADING, {'phase': BATCHPRE_PHASE, 
+    'heading': '156480', 'jobName': '3D35N5F'})
+mdb.jobs['3D35N5F']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'THE BEAM MPC HAS A ZERO LENGTH BETWEEN NODES 2319 INSTANCE BEAM-1 AND 193843 INSTANCE BEAM-1.  IT WILL BE REPLACED WITH A TIE MPC', 
+    'jobName': '3D35N5F'})
+mdb.jobs['3D35N5F']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\SIMULIA\\EstProducts\\2022\\win_b64\\resources\\install\\cmdDirFeature\\3D35N5F.odb', 
+    'jobName': '3D35N5F'})
+mdb.jobs['3D35N5F']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': '3D35N5F'})
+mdb.jobs['3D35N5F']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'DESKTOP-DIUKBM0', 'handle': 11560, 'jobName': '3D35N5F'})
+mdb.jobs['3D35N5F']._Message(STEP, {'stepName': 'Loading', 
+    'phase': STANDARD_PHASE, 'stepId': 1, 'jobName': '3D35N5F'})
+mdb.jobs['3D35N5F']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 0, 'jobName': '3D35N5F'})
+mdb.jobs['3D35N5F']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': '3D35N5F', 'memory': 3148.0})
+mdb.jobs['3D35N5F']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 65472.0, 'jobName': '3D35N5F'})
+mdb.jobs['3D35N5F']._Message(MINIMUM_MEMORY, {'minimum_memory': 423.0, 
+    'phase': STANDARD_PHASE, 'jobName': '3D35N5F'})
+mdb.jobs['3D35N5F']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'Solver problem. Numerical singularity when processing node BEAM-1.322 D.O.F. 1 ratio = 237.260E+09  .', 
+    'jobName': '3D35N5F'})
+mdb.jobs['3D35N5F']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 1, 'jobName': '3D35N5F'})
+mdb.jobs['3D35N5F']._Message(STATUS, {'totalTime': 1.0, 'attempts': 1, 
+    'timeIncrement': 1.0, 'increment': 1, 'stepTime': 1.0, 'step': 1, 
+    'jobName': '3D35N5F', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['3D35N5F']._Message(END_STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': '3D35N5F'})
+mdb.jobs['3D35N5F']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': '3D35N5F'})
+mdb.jobs['3D35N5F']._Message(JOB_COMPLETED, {
+    'time': 'Wed Apr 26 02:35:11 2023', 'jobName': '3D35N5F'})
+# Save by Martin Leung on 2023_04_26-03.08.15; build 2022 2021_09_16-01.57.30 176069
+# Save by Martin Leung on 2023_04_26-03.08.16; build 2022 2021_09_16-01.57.30 176069
