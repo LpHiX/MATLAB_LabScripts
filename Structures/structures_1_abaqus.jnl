@@ -2126,3 +2126,155 @@ mdb.jobs['1D40NTest']._Message(JOB_COMPLETED, {
     'time': 'Wed Apr 26 19:23:34 2023', 'jobName': '1D40NTest'})
 # Save by Martin Leung on 2023_04_26-19.24.33; build 2022 2021_09_16-01.57.30 176069
 # Save by Martin Leung on 2023_04_26-19.24.56; build 2022 2021_09_16-01.57.30 176069
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.Job(name='1D40N10F', objectToCopy=mdb.jobs['1D40NTest'])
+mdb.jobs['1D40N10F'].submit(consistencyChecking=OFF)
+mdb.jobs['1D40N10F']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'DESKTOP-DIUKBM0', 'handle': 0, 'jobName': '1D40N10F'})
+mdb.jobs['1D40N10F']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\SIMULIA\\EstProducts\\2022\\win_b64\\resources\\install\\cmdDirFeature\\1D40N10F.odb', 
+    'jobName': '1D40N10F'})
+mdb.jobs['1D40N10F']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': '1D40N10F'})
+mdb.jobs['1D40N10F']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'DESKTOP-DIUKBM0', 'handle': 14464, 'jobName': '1D40N10F'})
+mdb.jobs['1D40N10F']._Message(STEP, {'stepName': 'Load', 
+    'phase': STANDARD_PHASE, 'stepId': 1, 'jobName': '1D40N10F'})
+mdb.jobs['1D40N10F']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 0, 'jobName': '1D40N10F'})
+mdb.jobs['1D40N10F']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': '1D40N10F', 'memory': 24.0})
+mdb.jobs['1D40N10F']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 65472.0, 'jobName': '1D40N10F'})
+mdb.jobs['1D40N10F']._Message(MINIMUM_MEMORY, {'minimum_memory': 17.0, 
+    'phase': STANDARD_PHASE, 'jobName': '1D40N10F'})
+mdb.jobs['1D40N10F']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 1, 'jobName': '1D40N10F'})
+mdb.jobs['1D40N10F']._Message(STATUS, {'totalTime': 1.0, 'attempts': 1, 
+    'timeIncrement': 1.0, 'increment': 1, 'stepTime': 1.0, 'step': 1, 
+    'jobName': '1D40N10F', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['1D40N10F']._Message(END_STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': '1D40N10F'})
+mdb.jobs['1D40N10F']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': '1D40N10F'})
+mdb.jobs['1D40N10F']._Message(JOB_COMPLETED, {
+    'time': 'Wed Apr 26 20:29:31 2023', 'jobName': '1D40N10F'})
+mdb.models['Beam1D'].rootAssembly.deleteMesh(regions=(
+    mdb.models['Beam1D'].rootAssembly.instances['Beam-1'], ))
+mdb.models['Beam1D'].rootAssembly.seedPartInstance(deviationFactor=0.1, 
+    minSizeFactor=0.1, regions=(
+    mdb.models['Beam1D'].rootAssembly.instances['Beam-1'], ), size=28.0)
+mdb.models['Beam1D'].rootAssembly.setElementType(elemTypes=(ElemType(
+    elemCode=B23, elemLibrary=STANDARD), ), regions=(
+    mdb.models['Beam1D'].rootAssembly.instances['Beam-1'].edges.getSequenceFromMask(
+    ('[#7 ]', ), ), ))
+mdb.models['Beam1D'].rootAssembly.generateMesh(regions=(
+    mdb.models['Beam1D'].rootAssembly.instances['Beam-1'], ))
+mdb.Job(name='1D40N20F', objectToCopy=mdb.jobs['1D40N10F'])
+mdb.jobs['1D40N20F'].submit(consistencyChecking=OFF)
+mdb.jobs['1D40N20F']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'DESKTOP-DIUKBM0', 'handle': 0, 'jobName': '1D40N20F'})
+mdb.jobs['1D40N20F']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\SIMULIA\\EstProducts\\2022\\win_b64\\resources\\install\\cmdDirFeature\\1D40N20F.odb', 
+    'jobName': '1D40N20F'})
+mdb.jobs['1D40N20F']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': '1D40N20F'})
+mdb.jobs['1D40N20F']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'DESKTOP-DIUKBM0', 'handle': 7020, 'jobName': '1D40N20F'})
+mdb.jobs['1D40N20F']._Message(STEP, {'stepName': 'Load', 
+    'phase': STANDARD_PHASE, 'stepId': 1, 'jobName': '1D40N20F'})
+mdb.jobs['1D40N20F']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 0, 'jobName': '1D40N20F'})
+mdb.jobs['1D40N20F']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': '1D40N20F', 'memory': 24.0})
+mdb.jobs['1D40N20F']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 65472.0, 'jobName': '1D40N20F'})
+mdb.jobs['1D40N20F']._Message(MINIMUM_MEMORY, {'minimum_memory': 17.0, 
+    'phase': STANDARD_PHASE, 'jobName': '1D40N20F'})
+mdb.jobs['1D40N20F']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 1, 'jobName': '1D40N20F'})
+mdb.jobs['1D40N20F']._Message(STATUS, {'totalTime': 1.0, 'attempts': 1, 
+    'timeIncrement': 1.0, 'increment': 1, 'stepTime': 1.0, 'step': 1, 
+    'jobName': '1D40N20F', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['1D40N20F']._Message(END_STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': '1D40N20F'})
+mdb.jobs['1D40N20F']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': '1D40N20F'})
+mdb.jobs['1D40N20F']._Message(JOB_COMPLETED, {
+    'time': 'Wed Apr 26 20:33:11 2023', 'jobName': '1D40N20F'})
+mdb.models['Beam1D'].rootAssembly.deleteMesh(regions=(
+    mdb.models['Beam1D'].rootAssembly.instances['Beam-1'], ))
+mdb.models['Beam1D'].rootAssembly.seedPartInstance(deviationFactor=0.1, 
+    minSizeFactor=0.1, regions=(
+    mdb.models['Beam1D'].rootAssembly.instances['Beam-1'], ), size=11.0)
+mdb.models['Beam1D'].rootAssembly.setElementType(elemTypes=(ElemType(
+    elemCode=B23, elemLibrary=STANDARD), ), regions=(
+    mdb.models['Beam1D'].rootAssembly.instances['Beam-1'].edges.getSequenceFromMask(
+    ('[#7 ]', ), ), ))
+mdb.models['Beam1D'].rootAssembly.generateMesh(regions=(
+    mdb.models['Beam1D'].rootAssembly.instances['Beam-1'], ))
+mdb.Job(name='1D40N50F', objectToCopy=mdb.jobs['1D40N20F'])
+mdb.jobs['1D40N50F'].setValues(description='52', numThreadsPerMpiProcess=1)
+mdb.jobs['1D40N50F'].submit(consistencyChecking=OFF)
+mdb.jobs['1D40N50F']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'DESKTOP-DIUKBM0', 'handle': 0, 'jobName': '1D40N50F'})
+mdb.jobs['1D40N50F']._Message(HEADING, {'phase': BATCHPRE_PHASE, 
+    'heading': '52', 'jobName': '1D40N50F'})
+mdb.jobs['1D40N50F']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\SIMULIA\\EstProducts\\2022\\win_b64\\resources\\install\\cmdDirFeature\\1D40N50F.odb', 
+    'jobName': '1D40N50F'})
+mdb.jobs['1D40N50F']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': '1D40N50F'})
+mdb.jobs['1D40N50F']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'DESKTOP-DIUKBM0', 'handle': 19400, 'jobName': '1D40N50F'})
+mdb.jobs['1D40N50F']._Message(STEP, {'stepName': 'Load', 
+    'phase': STANDARD_PHASE, 'stepId': 1, 'jobName': '1D40N50F'})
+mdb.jobs['1D40N50F']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 0, 'jobName': '1D40N50F'})
+mdb.jobs['1D40N50F']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': '1D40N50F', 'memory': 24.0})
+mdb.jobs['1D40N50F']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 65472.0, 'jobName': '1D40N50F'})
+mdb.jobs['1D40N50F']._Message(MINIMUM_MEMORY, {'minimum_memory': 17.0, 
+    'phase': STANDARD_PHASE, 'jobName': '1D40N50F'})
+mdb.jobs['1D40N50F']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 1, 'jobName': '1D40N50F'})
+mdb.jobs['1D40N50F']._Message(STATUS, {'totalTime': 1.0, 'attempts': 1, 
+    'timeIncrement': 1.0, 'increment': 1, 'stepTime': 1.0, 'step': 1, 
+    'jobName': '1D40N50F', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['1D40N50F']._Message(END_STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': '1D40N50F'})
+mdb.jobs['1D40N50F']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': '1D40N50F'})
+mdb.jobs['1D40N50F']._Message(JOB_COMPLETED, {
+    'time': 'Wed Apr 26 20:35:57 2023', 'jobName': '1D40N50F'})
+mdb.models['Beam1D'].rootAssembly.deleteMesh(regions=(
+    mdb.models['Beam1D'].rootAssembly.instances['Beam-1'], ))
+mdb.models['Beam1D'].rootAssembly.seedPartInstance(deviationFactor=0.1, 
+    minSizeFactor=0.1, regions=(
+    mdb.models['Beam1D'].rootAssembly.instances['Beam-1'], ), size=5.0)
+mdb.models['Beam1D'].rootAssembly.setElementType(elemTypes=(ElemType(
+    elemCode=B23, elemLibrary=STANDARD), ), regions=(
+    mdb.models['Beam1D'].rootAssembly.instances['Beam-1'].edges.getSequenceFromMask(
+    ('[#7 ]', ), ), ))
+mdb.models['Beam1D'].rootAssembly.generateMesh(regions=(
+    mdb.models['Beam1D'].rootAssembly.instances['Beam-1'], ))
+mdb.Job(name='1D40N100F', objectToCopy=mdb.jobs['1D40N50F'])
+mdb.jobs['1D40N100F'].setValues(description='115', numThreadsPerMpiProcess=1)
+mdb.jobs['1D40N100F'].submit(consistencyChecking=OFF)
+# Save by Martin Leung on 2023_04_26-20.37.15; build 2022 2021_09_16-01.57.30 176069

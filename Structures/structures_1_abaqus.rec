@@ -1,0 +1,47 @@
+# -*- coding: mbcs -*-
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.jobs['1D40N100F']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'DESKTOP-DIUKBM0', 'handle': 0, 'jobName': '1D40N100F'})
+mdb.jobs['1D40N100F']._Message(HEADING, {'phase': BATCHPRE_PHASE, 
+    'heading': '115', 'jobName': '1D40N100F'})
+mdb.jobs['1D40N100F']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\SIMULIA\\EstProducts\\2022\\win_b64\\resources\\install\\cmdDirFeature\\1D40N100F.odb', 
+    'jobName': '1D40N100F'})
+mdb.jobs['1D40N100F']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': '1D40N100F'})
+mdb.jobs['1D40N100F']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'DESKTOP-DIUKBM0', 'handle': 12444, 'jobName': '1D40N100F'})
+mdb.jobs['1D40N100F']._Message(STEP, {'stepName': 'Load', 
+    'phase': STANDARD_PHASE, 'stepId': 1, 'jobName': '1D40N100F'})
+mdb.jobs['1D40N100F']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 0, 'jobName': '1D40N100F'})
+mdb.jobs['1D40N100F']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': '1D40N100F', 'memory': 24.0})
+mdb.jobs['1D40N100F']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 65472.0, 'jobName': '1D40N100F'})
+mdb.jobs['1D40N100F']._Message(MINIMUM_MEMORY, {'minimum_memory': 17.0, 
+    'phase': STANDARD_PHASE, 'jobName': '1D40N100F'})
+mdb.jobs['1D40N100F']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 1, 'jobName': '1D40N100F'})
+mdb.jobs['1D40N100F']._Message(STATUS, {'totalTime': 1.0, 'attempts': 1, 
+    'timeIncrement': 1.0, 'increment': 1, 'stepTime': 1.0, 'step': 1, 
+    'jobName': '1D40N100F', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['1D40N100F']._Message(END_STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': '1D40N100F'})
+mdb.jobs['1D40N100F']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': '1D40N100F'})
+mdb.jobs['1D40N100F']._Message(JOB_COMPLETED, {
+    'time': 'Wed Apr 26 20:37:26 2023', 'jobName': '1D40N100F'})
